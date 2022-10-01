@@ -24,6 +24,6 @@ const defaultDescription = tagLine;
 />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="generator" content={Astro.generator} />
-<title>{title ?? defaultTitle}</title>
+<title>{title ? title + " | " + name : defaultTitle}</title>
 
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
