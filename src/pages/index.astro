@@ -9,8 +9,51 @@ import Footer from "../components/Footer.astro";
     <MainHead />
   </head>
   <body>
+    <div
+      class="top-phone-number-bar has-background-dark has-text-white p-2 is-size-7"
+    >
+      <div class="container">
+        <span class="icon-text">
+          <span class="icon">
+            <i class="bi bi-telephone-fill"></i>
+          </span>
+          <span class="is-hidden-mobile">
+            Call{" "}
+            <a class="has-text-white" href={"tel:" + ""}>
+              {"3478519465"}
+            </a>{" "}
+            now for a free consultation and quote!
+          </span>
+          <span class="is-hidden-tablet">
+            <a class="has-text-white" href={"tel:" + "3478519465"}>
+              {"3478519465"}
+            </a>
+          </span>
+        </span>
+      </div>
+    </div>
     <Nav />
-
+    <section class="hero is-dark is-halfheight">
+      <div class="hero-body">
+        <div class="container">
+          <div class="columns">
+            <div class="column is-9">
+              <h1 class="title is-size-1 mb-1">Matranga Development</h1>
+              <h2 class="is-size-4 mb-5">
+                Serving local businesses in the NY Capital Region
+              </h2>
+              <button class="button is-info">Learn More</button>
+            </div>
+            <div class="column"></div>
+          </div>
+        </div>
+      </div>
+    </section>
     <Footer />
+    <style>
+      .hero {
+        background-image: url("/assets/low-poly-grid-haikei.png");
+      }
+    </style>
   </body>
 </html>

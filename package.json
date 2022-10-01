@@ -11,6 +11,12 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^1.4.2"
+    "@fontsource/fira-sans": "^4.5.9",
+    "@fontsource/oxygen": "^4.5.8",
+    "astro": "^1.4.2",
+    "bulma": "^0.9.4"
+  },
+  "devDependencies": {
+    "sass": "^1.55.0"
   }
 }
