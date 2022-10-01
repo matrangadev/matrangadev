@@ -1,9 +1,12 @@
 ---
+import { legalName } from "../data/company";
+
 const currentYear = new Date().getFullYear();
 ---
 
 <footer class="footer">
   <div class="container">
-    &copy; {currentYear} Matranga Development
+    &copy; {currentYear}
+    {legalName}
   </div>
 </footer>

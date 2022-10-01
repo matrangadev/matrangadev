@@ -1,0 +1,31 @@
+---
+export interface Props {
+  phone: string;
+}
+
+const { phone } = Astro.props;
+---
+
+<div
+  class="top-phone-number-bar has-background-dark has-text-white p-2 is-size-7"
+>
+  <div class="container">
+    <span class="icon-text">
+      <span class="icon">
+        <i class="bi bi-telephone-fill"></i>
+      </span>
+      <span class="is-hidden-mobile">
+        Call{" "}
+        <a class="has-text-white" href={"tel:" + phone}>
+          {phone}
+        </a>{" "}
+        now for a free consultation and quote!
+      </span>
+      <span class="is-hidden-tablet">
+        <a class="has-text-white" href={"tel:" + phone}>
+          {phone}
+        </a>
+      </span>
+    </span>
+  </div>
+</div>
