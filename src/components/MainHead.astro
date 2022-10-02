@@ -6,8 +6,8 @@ import "../styles/theme.scss";
 import { name, tagLine } from "../data/company";
 
 export interface Props {
-  title: string | undefined;
-  description: string | undefined;
+  title?: string | undefined;
+  description?: string | undefined;
 }
 
 const { title, description } = Astro.props;

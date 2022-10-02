@@ -1,5 +1,4 @@
 ---
-import { name } from "../data/company";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
@@ -7,11 +6,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <section class="section">
     <div class="container">
       <h1 class="title">Contact Us</h1>
-      <h2 class="subtitle">Send us a message to get started</h2>
+      <h2 class="subtitle">
+        Send us a message or schedule a <strong>free</strong> consultation
+      </h2>
 
       <div class="columns">
         <div class="column">
-          <form>
+          <form name="contact" netlify>
             <div class="field">
               <label for="name" class="label"
                 >Name <span class="has-text-danger">*</span>
@@ -72,16 +73,20 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             >
           </form>
         </div>
-        <div class="column is-5">
-          <div class="box has-background-info has-text-white note">
-            <p>
-              Interested in discussing how {name} could help your business/organization?
-              Send a message here and we'll respond within 24 hours. There is absolutely
-              <strong class="has-text-white">no charge</strong> for discussing with
-              us. We'd love to hear about your organization, its history, its mission,
-              and how we can best serve you.
-            </p>
+        <div class="column">
+          <!-- Calendly inline widget begin -->
+          <div
+            class="calendly-inline-widget"
+            data-url="https://calendly.com/matrangadev?hide_landing_page_details=1"
+            style="min-width:320px;height:630px;"
+          >
           </div>
+          <script
+            type="text/javascript"
+            src="https://assets.calendly.com/assets/external/widget.js"
+            async
+          ></script>
+          <!-- Calendly inline widget end -->
         </div>
       </div>
     </div>
