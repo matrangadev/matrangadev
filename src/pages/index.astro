@@ -1,66 +1,82 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import { name } from "../data/company";
+import MainHead from "../components/MainHead.astro";
+import AnnouncementBar from "../components/AnnouncementBar.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import { name, phoneNumber } from "../data/company";
 ---
 
-<BaseLayout>
-  <section class="hero is-dark is-halfheight">
-    <div class="hero-body">
-      <div class="container">
-        <div class="columns">
-          <div class="column is-8">
-            <h1 class="title is-size-1 mb-1">{name}</h1>
-            <h2 class="is-size-4 mb-5">
-              Serving local businesses in <span
-                id="location"
-                class="has-text-weight-bold"></span>
-            </h2>
-            <button class="button is-info">Learn More</button>
-          </div>
-          <div class="column">
-            <img
-              src="/assets/outline-ny.svg"
-              class="image"
-              alt="New York state"
-            />
+<html lang="en">
+  <head>
+    <MainHead />
+  </head>
+  <body>
+    <AnnouncementBar phone={phoneNumber} />
+    <div class="grid-bg">
+      <Nav />
+      <section class="hero is-dark is-halfheight">
+        <div class="hero-body">
+          <div class="container">
+            <div class="columns">
+              <div class="column is-8">
+                <h1 class="title is-size-1 mb-1">{name}</h1>
+                <h2 class="is-size-4 mb-5">
+                  Serving local businesses in <span
+                    id="location"
+                    class="has-text-weight-bold"></span>
+                </h2>
+                <button class="button is-info">Learn More</button>
+              </div>
+              <div class="column">
+                <img
+                  src="/assets/outline-ny.svg"
+                  class="image"
+                  alt="New York state"
+                />
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
     </div>
-  </section>
-</BaseLayout>
+    <Footer />
+    <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
 
-<script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
+    <script>
+      import TypeIt from "typeit";
 
-<script>
-  import TypeIt from "typeit";
+      document.addEventListener("DOMContentLoaded", function () {
+        new TypeIt("#location", {
+          loop: true,
+          speed: 50,
+        })
+          .type("the NY Capital Region")
+          .pause(2000)
+          .delete()
+          .type("Albany")
+          .pause(2000)
+          .delete()
+          .type("Troy")
+          .pause(2000)
+          .delete()
+          .pause(2000)
+          .type("Schenectady")
+          .pause(2000)
+          .delete()
+          .type("Saratoga")
+          .pause(2000)
+          .go();
+      });
+    </script>
 
-  document.addEventListener("DOMContentLoaded", function () {
-    new TypeIt("#location", {
-      loop: true,
-      speed: 50,
-    })
-      .type("the NY Capital Region")
-      .pause(2000)
-      .delete()
-      .type("Albany")
-      .pause(2000)
-      .delete()
-      .type("Troy")
-      .pause(2000)
-      .delete()
-      .pause(2000)
-      .type("Schenectady")
-      .pause(2000)
-      .delete()
-      .type("Saratoga")
-      .pause(2000)
-      .go();
-  });
-</script>
-
-<style>
-  .hero {
-    background-image: url("/assets/low-poly-grid-haikei.svg");
-  }
-</style>
+    <style is:global>
+      .grid-bg {
+        background-image: url("/assets/low-poly-grid-haikei.svg");
+      }
+      .grid-bg .navbar,
+      .grid-bg .hero {
+        background-color: transparent;
+      }
+    </style>
+  </body>
+</html>
