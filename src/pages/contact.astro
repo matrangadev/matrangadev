@@ -1,0 +1,93 @@
+---
+import { name } from "../data/company";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Contact Us">
+  <section class="section">
+    <div class="container">
+      <h1 class="title">Contact Us</h1>
+      <h2 class="subtitle">Send us a message to get started</h2>
+
+      <div class="columns">
+        <div class="column">
+          <form>
+            <div class="field">
+              <label for="name" class="label"
+                >Name <span class="has-text-danger">*</span>
+              </label>
+              <div class="control">
+                <input
+                  id="name"
+                  class="input"
+                  type="text"
+                  placeholder="Your name"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="phone" class="label">Phone</label>
+              <div class="control">
+                <input
+                  id="phone"
+                  class="input"
+                  type="tel"
+                  placeholder="The best phone number to reach you"
+                />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="email" class="label"
+                >Email <span class="has-text-danger">*</span>
+              </label>
+              <div class="control">
+                <input
+                  id="email"
+                  class="input"
+                  type="email"
+                  placeholder="The best email to reach you"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="message" class="label"
+                >Message <span class="has-text-danger">*</span>
+              </label>
+              <div class="control">
+                <textarea
+                  id="message"
+                  class="textarea"
+                  placeholder="Are there particular services you are interested in? Or would you just like to schedule a call to learn more for no charge? Feel free to give us as much or as little detail as desired."
+                  required></textarea>
+              </div>
+            </div>
+
+            <button class="button is-primary is-fullwidth" type="submit"
+              >Send Message</button
+            >
+          </form>
+        </div>
+        <div class="column is-5">
+          <div class="box has-background-info has-text-white note">
+            <p>
+              Interested in discussing how {name} could help your business/organization?
+              Send a message here and we'll respond within 24 hours.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .note {
+    position: sticky;
+    top: 2rem;
+  }
+</style>
