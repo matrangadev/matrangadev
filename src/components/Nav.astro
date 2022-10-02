@@ -5,14 +5,14 @@ import { name } from "../data/company";
 <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
   <div class="container">
     <div class="navbar-brand">
-      <a class="navbar-item" href="https://bulma.io">{name}</a>
+      <a class="navbar-item" rel="prefetch" href="/">{name}</a>
 
       <a
         role="button"
         class="navbar-burger"
         aria-label="menu"
         aria-expanded="false"
-        data-target="navbarBasicExample"
+        data-target="top-navbar"
       >
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
@@ -20,12 +20,12 @@ import { name } from "../data/company";
       </a>
     </div>
 
-    <div id="navbarBasicExample" class="navbar-menu">
+    <div id="top-navbar" class="navbar-menu">
       <div class="navbar-start">
-        <a class="navbar-item">Home</a>
-        <a class="navbar-item">About Us</a>
-        <a class="navbar-item">Our Services</a>
-        <a class="navbar-item">Contact</a>
+        <a class="navbar-item" rel="prefetch" href="/">Home</a>
+        <a class="navbar-item" rel="prefetch" href="/about">About Us</a>
+        <a class="navbar-item" rel="prefetch" href="/services">Our Services</a>
+        <a class="navbar-item" rel="prefetch" href="/contact">Contact</a>
       </div>
     </div>
   </div>
