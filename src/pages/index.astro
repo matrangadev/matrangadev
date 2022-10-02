@@ -11,7 +11,9 @@ import { name, tagLine } from "../data/company";
           <div class="column is-9">
             <h1 class="title is-size-1 mb-1">{name}</h1>
             <h2 class="is-size-4 mb-5">
-              {tagLine}
+              Serving local businesses in <span
+                id="location"
+                class="has-text-weight-bold"></span>
             </h2>
             <button class="button is-info">Learn More</button>
           </div>
@@ -21,6 +23,34 @@ import { name, tagLine } from "../data/company";
     </div>
   </section>
 </BaseLayout>
+
+<script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
+
+<script>
+  import TypeIt from "typeit";
+
+  document.addEventListener("DOMContentLoaded", function () {
+    new TypeIt("#location", {
+      loop: true,
+      speed: 50,
+    })
+      .type("the NY Capital Region")
+      .pause(2000)
+      .delete()
+      .type("Albany")
+      .pause(2000)
+      .delete()
+      .type("Troy")
+      .pause(2000)
+      .delete()
+      .pause(2000)
+      .type("Schenectady")
+      .delete()
+      .pause(2000)
+      .type("Saratoga")
+      .go();
+  });
+</script>
 
 <style>
   .hero {
