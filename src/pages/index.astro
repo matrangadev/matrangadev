@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { name, tagLine } from "../data/company";
+import { name } from "../data/company";
 ---
 
 <BaseLayout>
@@ -8,7 +8,7 @@ import { name, tagLine } from "../data/company";
     <div class="hero-body">
       <div class="container">
         <div class="columns">
-          <div class="column is-9">
+          <div class="column is-8">
             <h1 class="title is-size-1 mb-1">{name}</h1>
             <h2 class="is-size-4 mb-5">
               Serving local businesses in <span
@@ -17,7 +17,13 @@ import { name, tagLine } from "../data/company";
             </h2>
             <button class="button is-info">Learn More</button>
           </div>
-          <div class="column"></div>
+          <div class="column">
+            <img
+              src="/assets/outline-ny.svg"
+              class="image"
+              alt="New York state"
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -55,6 +61,6 @@ import { name, tagLine } from "../data/company";
 
 <style>
   .hero {
-    background-image: url("/assets/low-poly-grid-haikei.png");
+    background-image: url("/assets/low-poly-grid-haikei.svg");
   }
 </style>
