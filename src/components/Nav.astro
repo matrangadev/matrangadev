@@ -1,8 +1,34 @@
 ---
 import { name } from "../data/company";
+
+interface NavbarItem {
+  label: string;
+  href: string;
+}
+
+const navbarItems: NavbarItem[] = [
+  {
+    label: "Home",
+    href: "/",
+  },
+  {
+    label: "About Us",
+    href: "/about",
+  },
+  {
+    label: "Our Services",
+    href: "/services",
+  },
+  {
+    label: "Contact",
+    href: "/contact",
+  },
+];
+
+const isActive = (href) => Astro.request.url.endsWith(href);
 ---
 
-<nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+<nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="container">
     <div class="navbar-brand">
       <a class="navbar-item" rel="prefetch" href="/">{name}</a>
@@ -22,10 +48,20 @@ import { name } from "../data/company";
 
     <div id="top-navbar" class="navbar-menu">
       <div class="navbar-start">
-        <a class="navbar-item" rel="prefetch" href="/">Home</a>
-        <a class="navbar-item" rel="prefetch" href="/about">About Us</a>
-        <a class="navbar-item" rel="prefetch" href="/services">Our Services</a>
-        <a class="navbar-item" rel="prefetch" href="/contact">Contact</a>
+        {
+          navbarItems.map((item) => (
+            <a
+              class:list={[
+                "navbar-item underline-holder",
+                isActive(item.href) && "is-active",
+              ]}
+              rel="prefetch"
+              href={item.href}
+            >
+              <span>{item.label}</span>
+            </a>
+          ))
+        }
       </div>
     </div>
   </div>
