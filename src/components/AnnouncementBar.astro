@@ -1,4 +1,6 @@
 ---
+import { Icon } from "astro-icon";
+
 export interface Props {
   phone: string;
 }
@@ -12,7 +14,7 @@ const { phone } = Astro.props;
   <div class="container">
     <span class="icon-text">
       <span class="icon">
-        <i class="bi bi-telephone-fill"></i>
+        <Icon name="carbon:phone-filled" />
       </span>
       <span class="is-hidden-mobile">
         Call{" "}

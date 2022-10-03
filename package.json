@@ -17,6 +17,7 @@
     "@fontsource/oxygen": "^4.5.8",
     "astro": "^1.4.2",
     "astro-compress": "^1.0.9",
+    "astro-icon": "^0.7.3",
     "bulma": "^0.9.4",
     "typeit": "^8.7.0"
   },
