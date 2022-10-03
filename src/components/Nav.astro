@@ -31,7 +31,9 @@ const isActive = (href) => Astro.request.url.endsWith(href);
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="container">
     <div class="navbar-brand">
-      <a class="navbar-item" rel="prefetch" href="/">{name}</a>
+      <a class="navbar-item px-0" rel="prefetch" href="/">
+        <img src="/assets/logo.svg" alt="" />
+      </a>
 
       <a
         role="button"
