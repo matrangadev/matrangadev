@@ -3,7 +3,7 @@ import MainHead from "../components/MainHead.astro";
 import AnnouncementBar from "../components/AnnouncementBar.astro";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
-import { name, phoneNumber } from "../data/company";
+import { name, phoneNumber, tagLinePrefix } from "../data/company";
 ---
 
 <html lang="en">
@@ -19,14 +19,16 @@ import { name, phoneNumber } from "../data/company";
           <div class="container">
             <div class="columns">
               <div class="column is-8">
-                <h1 class="title is-size-1 mb-1">{name}</h1>
-                <h2 class="is-size-4 mb-5">
-                  Serving local businesses in <span
-                    id="location"
-                    class="has-text-weight-bold"></span>
+                <h1 class="title is-size-2 mb-1 hidden-lg is-hidden-tablet">
+                  {name}
+                </h1>
+                <h1 class="title is-size-1 mb-1 is-hidden-mobile">{name}</h1>
+                <h2 class="is-size-5 mb-5">
+                  {tagLinePrefix}
+                  <span id="location" class="has-text-weight-bold"></span>
                 </h2>
                 <div class="buttons">
-                  <a class="button is-info" href="/contact">Contact Us</a>
+                  <a class="button is-info" href="/contact">Get Started</a>
                   <a class="button is-light" href="/services">Learn More</a>
                 </div>
               </div>
