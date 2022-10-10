@@ -16,9 +16,9 @@ import { name, phoneNumber, tagLinePrefix } from "../data/company";
       <Nav />
       <section class="hero is-dark is-halfheight">
         <div class="hero-body">
-          <div class="container">
-            <div class="columns">
-              <div class="column is-8">
+          <div class="container is-max-widescreen">
+            <div class="columns is-desktop">
+              <div class="column is-9-desktop">
                 <h1 class="title is-size-2 mb-1 hidden-lg is-hidden-tablet">
                   {name}
                 </h1>
@@ -35,7 +35,7 @@ import { name, phoneNumber, tagLinePrefix } from "../data/company";
               <div class="column">
                 <img
                   src="/assets/outline-ny.svg"
-                  class="image"
+                  class="image ny"
                   alt="New York state"
                 />
               </div>
@@ -45,7 +45,7 @@ import { name, phoneNumber, tagLinePrefix } from "../data/company";
       </section>
     </div>
     <section class="section has-background-light" id="who">
-      <div class="container is-max-desktop">
+      <div class="container is-max-widescreen">
         <h1 class="title has-text-centered">Who We Are</h1>
 
         <div class="content">
@@ -68,6 +68,8 @@ import { name, phoneNumber, tagLinePrefix } from "../data/company";
         </div>
       </div>
     </section>
+
+    <section class="section" id="services"></section>
 
     <Footer />
 
@@ -98,6 +100,13 @@ import { name, phoneNumber, tagLinePrefix } from "../data/company";
           .go();
       });
     </script>
+    <style>
+      @media screen and (min-width: 1024px) {
+        img.ny {
+          scale: 1.5;
+        }
+      }
+    </style>
 
     <style is:global>
       .grid-bg {
