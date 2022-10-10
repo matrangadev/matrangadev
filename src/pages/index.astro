@@ -4,6 +4,8 @@ import AnnouncementBar from "../components/AnnouncementBar.astro";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 import { name, phoneNumber, tagLinePrefix } from "../data/company";
+import { services } from "../data/services";
+import Icon from "astro-icon";
 ---
 
 <html lang="en">
@@ -25,7 +27,7 @@ import { name, phoneNumber, tagLinePrefix } from "../data/company";
                 <h1 class="title is-size-1 mb-1 is-hidden-mobile">{name}</h1>
                 <h2 class="is-size-5 mb-5">
                   {tagLinePrefix}
-                  <span id="location" class="has-text-weight-bold"></span>
+                  <strong id="location"></strong>
                 </h2>
                 <div class="buttons">
                   <a class="button is-info" href="/contact">Get Started</a>
@@ -46,7 +48,7 @@ import { name, phoneNumber, tagLinePrefix } from "../data/company";
     </div>
     <section class="section has-background-light" id="who">
       <div class="container is-max-widescreen">
-        <h1 class="title has-text-centered">Who We Are</h1>
+        <h1 class="title has-text-centered my-5">Who We Are</h1>
 
         <div class="content">
           <blockquote class="mb-0">
@@ -69,7 +71,42 @@ import { name, phoneNumber, tagLinePrefix } from "../data/company";
       </div>
     </section>
 
-    <section class="section" id="services"></section>
+    <section class="section has-background-danger" id="services">
+      <div class="container has-bg-danger is-max-widescreen">
+        <h1 class="title has-text-centered has-text-white mt-5 mb-6">
+          What We Can Do For You
+        </h1>
+
+        <div class="columns is-multiline services">
+          {
+            services.map((service) => (
+              <div class="column is-full is-half-tablet is-4-desktop">
+                <div class="box">
+                  <div class="columns is-vcentered">
+                    <div class="column p-0 is-narrow has-text-centered">
+                      <span class="image is-64x64 mx-auto">
+                        <Icon name={service.iconName} />
+                      </span>
+                    </div>
+                    <div class="column">
+                      <h2 class="subtitle is-size-5 has-text-weight-bold">
+                        {service.name}
+                      </h2>
+                    </div>
+                  </div>
+
+                  <p class="pb-5">{service.description}</p>
+
+                  <button class="button is-small is-danger is-outlined is-fullwidth">
+                    Explore
+                  </button>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
 
     <Footer />
 

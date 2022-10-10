@@ -11,8 +11,8 @@ const { phone } = Astro.props;
 <div
   class="top-phone-number-bar has-background-dark has-text-white p-2 is-size-7"
 >
-  <div class="container">
-    <span class="icon-text">
+  <div class="container is-max-widescreen">
+    <small class="icon-text">
       <span class="icon">
         <Icon name="carbon:phone-filled" />
       </span>
@@ -28,6 +28,6 @@ const { phone } = Astro.props;
           {phone}
         </a>
       </span>
-    </span>
+    </small>
   </div>
 </div>
