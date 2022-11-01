@@ -21,6 +21,6 @@ export const services: Service[] = [
     name: "Custom Software Development",
     iconName: "ant-design:tool-filled",
     description:
-      "We can create a custom web or desktop application to manage your data, keep track of customers, aid in fundraising, etc.",
+      "We can create a custom application to manage your data, keep track of customers, aid in fundraising, or whatever your business needs are.",
   },
 ];
