@@ -80,18 +80,18 @@ import Icon from "astro-icon";
         <div class="columns is-multiline services">
           {
             services.map((service) => (
-              <div class="column is-full is-half-tablet is-4-desktop">
+              <div class="column is-full is-half-tablet">
                 <div class="box">
                   <div class="columns is-vcentered">
-                    <div class="column p-0 is-narrow has-text-centered">
-                      <span class="image is-64x64 mx-auto">
-                        <Icon name={service.iconName} />
-                      </span>
-                    </div>
                     <div class="column">
                       <h2 class="subtitle is-size-5 has-text-weight-bold">
                         {service.name}
                       </h2>
+                    </div>
+                    <div class="column p-0 is-narrow has-text-centered has-text-grey">
+                      <span class="image is-64x64 mx-auto">
+                        <Icon name={service.iconName} />
+                      </span>
                     </div>
                   </div>
 
