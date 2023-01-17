@@ -1,0 +1,31 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="About Us">
+  <section class="section">
+    <div class="container is-max-widescreen">
+      <div class="columns">
+        <div class="column">
+          <h1 class="title">About Matranga Development</h1>
+
+          <p>My name is Frank Matranga,</p>
+        </div>
+        <div class="column is-narrow">
+          <img
+            width="350px"
+            src="/assets/Matranga_Frank_web.jpg"
+            alt="Headshot of Frank Matranga"
+            class="headshot"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .headshot {
+    border-radius: 10px;
+  }
+</style>
