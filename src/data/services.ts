@@ -21,6 +21,6 @@ export const services: Service[] = [
     name: "Information Technology Consulting",
     iconName: "mdi:account-help",
     description:
-      "We can advise you for any technology choices you need to make for your organization. We can simply make suggestions or take a more active role in helping you implement whatever you need. Think Salesforce, Shopify, Wordpress, Stripe, etc.",
+      "We can advise you on any technology choices you need to make for your organization. We can perform research and make suggestions or take a more active role in helping you implement whatever you need, e.g. Salesforce, Shopify, Wordpress, Stripe, etc.",
   },
 ];

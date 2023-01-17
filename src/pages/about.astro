@@ -1,4 +1,5 @@
 ---
+import { Icon } from "astro-icon";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
@@ -9,7 +10,45 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <div class="column">
           <h1 class="title">About Matranga Development</h1>
 
-          <p>My name is Frank Matranga,</p>
+          <div class="content">
+            <p>
+              👋 Hello! My name is Frank Matranga, and I'm a software engineer, open source developer, and computer science teacher native to New York City.
+            </p>
+
+            <p>
+              I studied in Troy and received a dual degree in Information Technology and Web Science & Computer Science from Rensselaer Polytechnic Institute in 2022,
+              and I currently work as a software engineer for <a href="https://www.even.com/" target="_blank">Even</a> and <a href="https://one.app" target="_blank">ONE</a>.
+            </p>
+
+            <p> I've taught Computer Science for 7 years, have developed open source software for 9 years, and have been developing fundraising software for
+              nonprofits in my hometown of The Bronx for the past 2 years.</p>
+
+            <p>
+              After living in the Capital Region during my studies at RPI, I've come to love and appreciate the area and its communities. I'm seeking to give back to those communities by offering my
+              services inexpensively to local small businesses and nonprofits.
+            </p>
+
+            <p>
+              As a full stack software engineer and general technologist, I can wear many hats. Besides software development, I can offer the
+              graphic design, user interface design, image editing, audio editing, video editing, online advertising, database management, and testing
+              that often is needed for technology projects.
+            </p>
+          </div>
+
+          <a class="button" href="https://www.linkedin.com/in/frank-matranga/" target="_blank">
+            <span class="icon">
+              <Icon name="mdi:linkedin" />
+            </span>
+            <span>My LinkedIn Profile</span>
+          </a>
+
+          <a class="button" href="https://github.com/Apexal" target="_blank">
+            <span class="icon">
+              <Icon name="mdi:github" />
+            </span>
+            <span>My GitHub</span>
+          </a>
+          
         </div>
         <div class="column is-narrow">
           <img
@@ -27,5 +66,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 <style>
   .headshot {
     border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }
 </style>

@@ -16,10 +16,6 @@ const navbarItems: NavbarItem[] = [
     href: "/about",
   },
   {
-    label: "Our Services",
-    href: "/services",
-  },
-  {
     label: "Contact",
     href: "/contact",
   },
@@ -32,7 +28,7 @@ const isActive = (href) => Astro.request.url.endsWith(href);
   <div class="container is-max-widescreen">
     <div class="navbar-brand">
       <a class="navbar-item px-0" rel="prefetch" href="/">
-        <img src="/assets/logo.svg" alt="Matranga Development logo" style="min-width: 120px;" />
+        <img src="/assets/logo.svg" alt={name + " logo"} style="min-width: 120px;" />
       </a>
 
       <a
