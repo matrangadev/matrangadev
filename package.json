@@ -18,10 +18,12 @@
     "astro": "^1.9.2",
     "astro-compress": "^1.1.27",
     "astro-icon": "^0.8.0",
+    "astro-robots-txt": "^0.3.11",
     "bulma": "^0.9.4",
     "typeit": "^8.7.1"
   },
   "devDependencies": {
-    "sass": "^1.57.1"
+    "sass": "^1.57.1",
+    "svgo": "^2.8.0"
   }
 }
