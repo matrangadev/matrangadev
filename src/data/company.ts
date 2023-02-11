@@ -6,4 +6,4 @@ export const tagLine =
 export const tagLinePrefix = "Serving small businesses and nonprofits in";
 export const email = "frank@matranga.dev";
 export const mission =
-  "Giving back to the comunity by creating software to save your organization time and money.";
+  "Giving back to the community by creating software to save your organization time and money.";

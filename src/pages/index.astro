@@ -31,7 +31,7 @@ import Icon from "astro-icon";
                 </h2>
                 <div class="buttons">
                   <a class="button is-info" href="/contact">Get Started</a>
-                  <a class="button is-light" href="/services">Learn More</a>
+                  <a class="button is-light" href="/about">Learn More</a>
                 </div>
               </div>
               <div class="column">
@@ -53,11 +53,11 @@ import Icon from "astro-icon";
         <div class="content">
           <blockquote class="mb-0">
             <p>
-              Matranga Development is a <em>mission-driven</em>, software
+              {name} is a <em>mission-driven</em>, software
               development agency you can depend on to serve your organization's
               technology needs. Owned by a RPI graduate working in the financial
               technology industry, we seek to give back to the upstate
-              communities that we've benefitted from. We work with you to
+              communities that we've benefited from. We work with you to
               determine how we can provide the <strong>maximum value</strong>
               to you at the <strong>minimum cost</strong>. Whether your needs
               range from a basic informational website to more complex systems,
@@ -81,7 +81,7 @@ import Icon from "astro-icon";
           {
             services.map((service) => (
               <div class="column is-full is-half-tablet">
-                <div class="box">
+                <div class="box p-6">
                   <div class="columns is-vcentered">
                     <div class="column">
                       <h2 class="subtitle is-size-5 has-text-weight-bold">
@@ -95,16 +95,14 @@ import Icon from "astro-icon";
                     </div>
                   </div>
 
-                  <p class="pb-5">{service.description}</p>
-
-                  <button class="button is-small is-danger is-outlined is-fullwidth">
-                    Explore
-                  </button>
+                  <p>{service.description}</p>
                 </div>
               </div>
             ))
           }
         </div>
+        
+        <a href="/contact" class="button is-light is-outlined is-block">Get Started</a>
       </div>
     </section>
 

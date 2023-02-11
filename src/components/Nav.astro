@@ -16,10 +16,6 @@ const navbarItems: NavbarItem[] = [
     href: "/about",
   },
   {
-    label: "Our Services",
-    href: "/services",
-  },
-  {
     label: "Contact",
     href: "/contact",
   },
@@ -31,8 +27,8 @@ const isActive = (href) => Astro.request.url.endsWith(href);
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="container is-max-widescreen">
     <div class="navbar-brand">
-      <a class="navbar-item" href="/">
-        <img src="/assets/logo.svg" alt="Matranga Development logo" style="height: 60px" />
+      <a class="navbar-item" rel="prefetch" href="/">
+        <img src="/assets/logo.svg" alt={name + " logo"} style="min-height: 60px;" />
       </a>
 
       <a
@@ -49,7 +45,7 @@ const isActive = (href) => Astro.request.url.endsWith(href);
     </div>
 
     <div id="top-navbar" class="navbar-menu">
-      <div class="navbar-end">
+      <div class="navbar-start">
         {
           navbarItems.map((item) => (
             <a
