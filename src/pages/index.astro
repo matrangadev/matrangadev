@@ -1,133 +1,175 @@
 ---
-import MainHead from "../components/MainHead.astro";
-import CTABar from "../components/CTABar.astro";
-import TopNavbar from "../components/TopNavbar.astro";
-import Footer from "../components/Footer.astro";
 import { name, phoneNumber, tagLinePrefix } from "../data/company";
 import { services } from "../data/services";
 import Icon from "astro-icon";
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<html lang="en">
-  <head>
-    <MainHead />
-  </head>
-  <body>
-    <TopNavbar />
-    <!-- <CTABar phone={phoneNumber} /> -->
-    <main>
-      <section class="bg-gradient bg-amber-400 text-gray-800">
-        <div
-          class="container mx-auto w-4/5 max-w-7xl space-y-5 py-20 text-center font-title lg:py-32"
+<BaseLayout>
+  <main>
+    <section
+      class="bg-gradient bg-gradient-to-br from-amber-400 to-amber-300 text-gray-800"
+    >
+      <div
+        class="container mx-auto w-4/5 max-w-7xl space-y-5 py-20 text-center font-title lg:py-40"
+      >
+        <h1 class="text-5xl font-semibold lg:text-7xl">
+          {name}
+        </h1>
+        <h2 class="text-xl lg:text-3xl">
+          {tagLinePrefix}
+          <br class="lg:hidden" />
+          <span id="location" class="font-semibold underline"></span>
+        </h2>
+      </div>
+    </section>
+
+    <section
+      class="container mx-auto flex w-4/5 max-w-7xl flex-col items-start text-center lg:flex-row lg:text-left"
+    >
+      <div class="mx-auto w-60 lg:w-1/2">
+        <video autoplay class="mx-auto lg:w-80">
+          <source src="/assets/coins_stacking.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div class="mt-10 space-y-6 px-11 lg:mt-20 lg:w-1/2 lg:py-12">
+        <h2
+          class="font-title text-4xl font-semibold leading-8 text-gray-800 lg:text-4xl"
         >
-          <h1 class="text-5xl font-semibold lg:text-7xl">
-            Matranga Development
-          </h1>
-          <h2 class="text-xl lg:text-3xl">
-            Serving small businesses in <br class="lg:hidden" />
-            <span id="location" class="font-semibold underline"></span>
-          </h2>
-        </div>
-      </section>
-
-      <section
-        class="container mx-auto flex w-4/5 max-w-7xl flex-col items-start text-center lg:flex-row lg:text-left"
-      >
-        <div class="mx-auto w-60 lg:w-1/2">
-          <video autoplay class="mx-auto lg:w-1/2">
-            <source src="/assets/coins_stacking.mp4" type="video/mp4" />
-          </video>
-        </div>
-        <div class="mt-10 space-y-6 px-11 lg:mt-0 lg:w-1/2 lg:py-20">
-          <h2
-            class="font-title text-3xl font-semibold leading-8 text-gray-800 lg:text-4xl"
+          We want to save you <span class="text-amber-500 underline">
+            money</span
           >
-            We want to help you save <span class="text-amber-500 underline">
-              money</span
-            >
-          </h2>
-          <p class="font-title font-medium text-gray-600 lg:text-lg">
-            By making the right technology choices for your organization.
-            Whether that means helping you select the best existing tools and
-            services, or making them from scratch for your exact needs.
-          </p>
-        </div>
-      </section>
+        </h2>
+        <p class="font-title font-medium text-gray-600 lg:text-lg">
+          By making the right technology choices for your organization. Whether
+          that means helping you select the best existing tools and services, or
+          making them from scratch for your exact needs.
+        </p>
+      </div>
+    </section>
 
-      <section
-        class="container mx-auto flex w-4/5 max-w-7xl flex-col items-center py-20 text-center lg:flex-row-reverse lg:text-left"
+    <section
+      class="container mx-auto flex w-4/5 max-w-7xl flex-col items-center py-20 text-center lg:flex-row-reverse lg:text-left"
+    >
+      <div class="mx-auto w-64 lg:w-1/2">
+        <img
+          src="/assets/man_with_clock.svg"
+          alt="Man with clock"
+          class="mx-auto w-80"
+        />
+      </div>
+      <div class="space-y-6 px-11 lg:w-1/2">
+        <h2
+          class="font-title text-4xl font-semibold leading-8 text-gray-800 lg:text-4xl"
+        >
+          We want to save you <span class="text-amber-500 underline">
+            time</span
+          >
+        </h2>
+        <p class="font-title font-medium text-gray-600 lg:text-lg">
+          By automating the processes that you do monthly, weekly, and daily to
+          keep your organization running.
+        </p>
+      </div>
+    </section>
+
+    <section
+      class="container mx-auto w-4/5 max-w-7xl space-y-14 py-24 text-center font-title"
+    >
+      <div
+        class="rounded-lg bg-amber-600 p-11 text-4xl font-semibold text-white lg:text-5xl"
       >
-        <div class="mx-auto w-64 lg:w-1/2">
+        <h1>Who We Are</h1>
+      </div>
+      <p class="text-justify text-gray-800 lg:text-lg">
+        <span class="font-semibold">Matranga Development</span>
+        is a mission-driven, software development and consulting agency you can depend
+        on to serve your organization's technology needs. Owned by a RPI graduate
+        working in the financial technology industry, we seek to give back to the
+        upstate communities that we've benefited from. We work with you to determine
+        how we can provide the <span class="font-semibold text-amber-500"
+          >maximum value</span
+        > to you at the <span class="font-semibold text-amber-500"
+          >minimum cost</span
+        >. Whether your needs range from a basic informational website to more
+        complex software systems, we will happily meet you where you are.
+      </p>
+    </section>
+
+    <section
+      class="container mx-auto w-4/5 max-w-7xl space-y-14 py-11 text-center font-title"
+    >
+      <div class="text-4xl font-semibold lg:text-5xl">
+        <h1>Our Offered Services</h1>
+      </div>
+      <div
+        class="flex flex-col space-y-2 text-white lg:flex-row lg:space-x-5 lg:space-y-0"
+      >
+        <div
+          class="w-full cursor-pointer space-y-4 rounded-lg bg-amber-400 p-10 transition-all hover:scale-105 lg:rounded-none lg:rounded-tl-lg lg:rounded-bl-lg"
+        >
           <img
-            src="/assets/man_with_clock.svg"
-            alt="Man with clock"
-            class="mx-auto w-80"
+            class="mx-auto w-52"
+            src="/assets/man_with_questions.svg"
+            alt="Smart phone held in a hand"
           />
+          <h2 class="text-3xl font-semibold">Technology Consulting</h2>
         </div>
-        <div class="space-y-6 px-11 lg:w-1/2">
-          <h2
-            class="font-title text-3xl font-semibold leading-8 text-gray-800 lg:text-4xl"
-          >
-            We want to help you save <span class="text-amber-500 underline">
-              time</span
-            >
-          </h2>
-          <p class="font-title font-medium text-gray-600 lg:text-lg">
-            By automating the processes that you do monthly, weekly, and daily
-            to keep your organization running.
-          </p>
+        <div
+          class="w-full cursor-pointer space-y-4 rounded-lg bg-amber-400 p-10 transition-all hover:scale-105 lg:rounded-none"
+        >
+          <img
+            class="mx-auto w-52"
+            src="/assets/phone_with_hand.svg"
+            alt="Smart phone held in a hand"
+          />
+          <h2 class="text-3xl font-semibold">Custom Software Development</h2>
         </div>
-      </section>
+        <div
+          class="w-full cursor-pointer space-y-4 rounded-lg bg-amber-400 p-10 transition-all hover:scale-105 lg:rounded-none lg:rounded-tr-lg lg:rounded-br-lg"
+        >
+          <img
+            class="mx-auto w-52"
+            src="/assets/phone_with_hand.svg"
+            alt="Smart phone held in a hand"
+          />
+          <h2 class="text-3xl font-semibold">Mobile Development</h2>
+        </div>
+      </div>
+    </section>
 
-      <Footer />
+    <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
+    <script>
+      import TypeIt from "typeit";
 
-      <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
-      <script>
-        import TypeIt from "typeit";
+      const TYPE_SPEED = 40;
+      const PAUSE_AFTER_TYPE = 2000;
+      const PAUSE_BEFORE_DELETE = 200;
 
-        document.addEventListener("DOMContentLoaded", function () {
-          new TypeIt("#location", {
-            loop: true,
-            speed: 40,
-          })
-            .type("the NY Capital Region")
-            .pause(2000)
-            .delete()
-            .pause(200)
-            .type("Albany")
-            .pause(2000)
-            .delete()
-            .pause(200)
-            .type("Troy")
-            .pause(2000)
-            .delete()
-            .pause(200)
-            .type("Schenectady")
-            .pause(2000)
-            .delete()
-            .pause(200)
-            .type("Saratoga")
-            .pause(2000)
-            .go();
+      const locations = [
+        "the NY Capital Region",
+        "Albany",
+        "Troy",
+        "Schenectady",
+        "Saratoga",
+      ];
+
+      document.addEventListener("DOMContentLoaded", function () {
+        let typer = new TypeIt("#location", {
+          loop: true,
+          speed: TYPE_SPEED,
         });
-      </script>
-      <style>
-        @media screen and (min-width: 1024px) {
-          img.ny {
-            scale: 1.5;
-          }
-        }
-      </style>
 
-      <style is:global>
-        .grid-bg {
-          background-image: url("/assets/low-poly-grid-haikei.svg");
+        for (const location of locations) {
+          typer = typer
+            .type(location)
+            .pause(PAUSE_AFTER_TYPE)
+            .delete()
+            .pause(PAUSE_BEFORE_DELETE);
         }
-        .grid-bg .navbar,
-        .grid-bg .hero {
-          background-color: transparent;
-        }
-      </style>
-    </main>
-  </body>
-</html>
+
+        typer.go();
+      });
+    </script>
+  </main>
+</BaseLayout>
