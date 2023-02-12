@@ -2,7 +2,7 @@
 import "@fontsource/oxygen";
 import "@fontsource/fira-sans";
 
-import "../styles/theme.scss";
+// import "../styles/theme.scss";
 import { name, tagLine } from "../data/company";
 
 export interface Props {
@@ -26,10 +26,16 @@ const defaultDescription = tagLine;
 <meta name="generator" content={Astro.generator} />
 <title>{title ? title + " | " + name : defaultTitle}</title>
 
-
-<link rel="icon" href="/assets/logo.svg">
+<link rel="icon" href="/assets/logo.svg" />
 
 <link
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap"
+  rel="stylesheet"
 />

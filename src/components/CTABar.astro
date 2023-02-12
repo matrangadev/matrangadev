@@ -9,25 +9,10 @@ const { phone } = Astro.props;
 ---
 
 <div
-  class="top-phone-number-bar has-background-dark has-text-white p-2 is-size-7"
+  class="container mx-auto flex flex-row items-center space-x-2 bg-gray-900 px-5 py-2 text-sm text-white"
 >
-  <div class="container is-max-widescreen">
-    <small class="icon-text">
-      <span class="icon">
-        <Icon name="carbon:phone-filled" />
-      </span>
-      <span class="is-hidden-mobile">
-        Call{" "}
-        <a class="has-text-white" href={"tel:" + phone}>
-          {phone}
-        </a>{" "}
-        now for a free consultation and quote!
-      </span>
-      <span class="is-hidden-tablet">
-        <a class="has-text-white" href={"tel:" + phone}>
-          {phone}
-        </a>
-      </span>
-    </small>
-  </div>
+  <Icon name="carbon:phone-filled" class="h-7" />
+  <span class="is-hidden-mobile">
+    Call <a href={"tel:" + phone}>{phone}</a> now for a free consultation and quote!
+  </span>
 </div>

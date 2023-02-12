@@ -1,7 +1,7 @@
 ---
 import MainHead from "../components/MainHead.astro";
 import CTABar from "../components/CTABar.astro";
-import Nav from "../components/Nav.astro";
+import TopNavbar from "../components/TopNavbar.astro";
 import Footer from "../components/Footer.astro";
 import { name, phoneNumber, tagLinePrefix } from "../data/company";
 import { services } from "../data/services";
@@ -13,144 +13,121 @@ import Icon from "astro-icon";
     <MainHead />
   </head>
   <body>
-    <CTABar phone={phoneNumber} />
-    <div class="grid-bg">
-      <Nav />
-      <section class="hero is-dark is-halfheight">
-        <div class="hero-body">
-          <div class="container is-max-widescreen">
-            <div class="columns is-desktop">
-              <div class="column is-9-desktop">
-                <h1 class="title is-size-2 mb-1 hidden-lg is-hidden-tablet">
-                  {name}
-                </h1>
-                <h1 class="title is-size-1 mb-1 is-hidden-mobile">{name}</h1>
-                <h2 class="is-size-5 mb-5">
-                  {tagLinePrefix}
-                  <strong id="location"></strong>
-                </h2>
-                <div class="buttons">
-                  <a class="button is-info" href="/contact">Get Started</a>
-                  <a class="button is-light" href="/about">Learn More</a>
-                </div>
-              </div>
-              <div class="column">
-                <img
-                  src="/assets/outline-ny.svg"
-                  class="image ny"
-                  alt="New York state"
-                />
-              </div>
-            </div>
-          </div>
+    <TopNavbar />
+    <!-- <CTABar phone={phoneNumber} /> -->
+    <main>
+      <section class="bg-gradient bg-amber-400 text-gray-800">
+        <div
+          class="container mx-auto w-4/5 max-w-7xl space-y-5 py-20 text-center font-title lg:py-32"
+        >
+          <h1 class="text-5xl font-semibold lg:text-7xl">
+            Matranga Development
+          </h1>
+          <h2 class="text-xl lg:text-3xl">
+            Serving small businesses in <br class="lg:hidden" />
+            <span id="location" class="font-semibold underline"></span>
+          </h2>
         </div>
       </section>
-    </div>
-    <section class="section has-background-light" id="who">
-      <div class="container is-max-widescreen">
-        <h1 class="title has-text-centered my-5">Who We Are</h1>
 
-        <div class="content">
-          <blockquote class="mb-0">
-            <p>
-              {name} is a <em>mission-driven</em>, software
-              development agency you can depend on to serve your organization's
-              technology needs. Owned by a RPI graduate working in the financial
-              technology industry, we seek to give back to the upstate
-              communities that we've benefited from. We work with you to
-              determine how we can provide the <strong>maximum value</strong>
-              to you at the <strong>minimum cost</strong>. Whether your needs
-              range from a basic informational website to more complex systems,
-              we will happily serve you.
-            </p>
-          </blockquote>
-          <div class="has-text-centered">
-            <a href="/about" class="">Learn More</a>
-          </div>
+      <section
+        class="container mx-auto flex w-4/5 max-w-7xl flex-col items-start text-center lg:flex-row lg:text-left"
+      >
+        <div class="mx-auto w-60 lg:w-1/2">
+          <video autoplay class="mx-auto lg:w-1/2">
+            <source src="/assets/coins_stacking.mp4" type="video/mp4" />
+          </video>
         </div>
-      </div>
-    </section>
+        <div class="mt-10 space-y-6 px-11 lg:mt-0 lg:w-1/2 lg:py-20">
+          <h2
+            class="font-title text-3xl font-semibold leading-8 text-gray-800 lg:text-4xl"
+          >
+            We want to help you save <span class="text-amber-500 underline">
+              money</span
+            >
+          </h2>
+          <p class="font-title font-medium text-gray-600 lg:text-lg">
+            By making the right technology choices for your organization.
+            Whether that means helping you select the best existing tools and
+            services, or making them from scratch for your exact needs.
+          </p>
+        </div>
+      </section>
 
-    <section class="section has-background-danger" id="services">
-      <div class="container has-bg-danger is-max-widescreen">
-        <h1 class="title has-text-centered has-text-white mt-5 mb-6">
-          What We Can Do For You
-        </h1>
+      <section
+        class="container mx-auto flex w-4/5 max-w-7xl flex-col items-center py-20 text-center lg:flex-row-reverse lg:text-left"
+      >
+        <div class="mx-auto w-64 lg:w-1/2">
+          <img
+            src="/assets/man_with_clock.svg"
+            alt="Man with clock"
+            class="mx-auto w-80"
+          />
+        </div>
+        <div class="space-y-6 px-11 lg:w-1/2">
+          <h2
+            class="font-title text-3xl font-semibold leading-8 text-gray-800 lg:text-4xl"
+          >
+            We want to help you save <span class="text-amber-500 underline">
+              time</span
+            >
+          </h2>
+          <p class="font-title font-medium text-gray-600 lg:text-lg">
+            By automating the processes that you do monthly, weekly, and daily
+            to keep your organization running.
+          </p>
+        </div>
+      </section>
 
-        <div class="columns is-multiline services">
-          {
-            services.map((service) => (
-              <div class="column is-full is-half-tablet">
-                <div class="box p-6">
-                  <div class="columns is-vcentered">
-                    <div class="column">
-                      <h2 class="subtitle is-size-5 has-text-weight-bold">
-                        {service.name}
-                      </h2>
-                    </div>
-                    <div class="column p-0 is-narrow has-text-centered has-text-grey">
-                      <span class="image is-64x64 mx-auto">
-                        <Icon name={service.iconName} />
-                      </span>
-                    </div>
-                  </div>
+      <Footer />
 
-                  <p>{service.description}</p>
-                </div>
-              </div>
-            ))
+      <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
+      <script>
+        import TypeIt from "typeit";
+
+        document.addEventListener("DOMContentLoaded", function () {
+          new TypeIt("#location", {
+            loop: true,
+            speed: 40,
+          })
+            .type("the NY Capital Region")
+            .pause(2000)
+            .delete()
+            .pause(200)
+            .type("Albany")
+            .pause(2000)
+            .delete()
+            .pause(200)
+            .type("Troy")
+            .pause(2000)
+            .delete()
+            .pause(200)
+            .type("Schenectady")
+            .pause(2000)
+            .delete()
+            .pause(200)
+            .type("Saratoga")
+            .pause(2000)
+            .go();
+        });
+      </script>
+      <style>
+        @media screen and (min-width: 1024px) {
+          img.ny {
+            scale: 1.5;
           }
-        </div>
-        
-        <a href="/contact" class="button is-light is-outlined is-block">Get Started</a>
-      </div>
-    </section>
-
-    <Footer />
-
-    <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
-    <script>
-      import TypeIt from "typeit";
-
-      document.addEventListener("DOMContentLoaded", function () {
-        new TypeIt("#location", {
-          loop: true,
-          speed: 40,
-        })
-          .type("the NY Capital Region")
-          .pause(2000)
-          .delete()
-          .type("Albany")
-          .pause(2000)
-          .delete()
-          .type("Troy")
-          .pause(2000)
-          .delete()
-          .pause(2000)
-          .type("Schenectady")
-          .pause(2000)
-          .delete()
-          .type("Saratoga")
-          .pause(2000)
-          .go();
-      });
-    </script>
-    <style>
-      @media screen and (min-width: 1024px) {
-        img.ny {
-          scale: 1.5;
         }
-      }
-    </style>
+      </style>
 
-    <style is:global>
-      .grid-bg {
-        background-image: url("/assets/low-poly-grid-haikei.svg");
-      }
-      .grid-bg .navbar,
-      .grid-bg .hero {
-        background-color: transparent;
-      }
-    </style>
+      <style is:global>
+        .grid-bg {
+          background-image: url("/assets/low-poly-grid-haikei.svg");
+        }
+        .grid-bg .navbar,
+        .grid-bg .hero {
+          background-color: transparent;
+        }
+      </style>
+    </main>
   </body>
 </html>

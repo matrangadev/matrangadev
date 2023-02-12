@@ -1,0 +1,49 @@
+---
+import { name } from "../data/company";
+
+interface NavbarItem {
+  label: string;
+  href: string;
+}
+
+const navbarItems: NavbarItem[] = [
+  {
+    label: "Home",
+    href: "/",
+  },
+  {
+    label: "About Us",
+    href: "/about",
+  },
+  {
+    label: "Contact",
+    href: "/contact",
+  },
+];
+
+const isActive = (href: string) => Astro.request.url.endsWith(href);
+---
+
+<nav
+  class="fixed inset-x-0 top-5 z-10 mx-auto flex w-5/6 max-w-7xl flex-col items-center justify-between rounded-full bg-white bg-opacity-60 px-24 font-title font-semibold text-gray-800 backdrop-blur-[10px] lg:flex-row lg:flex-wrap"
+  role="navigation"
+  aria-label="main navigation"
+>
+  <!-- <img src="/assets/logo.svg" alt={name + " logo"} class="h-12 fill-black" /> -->
+  <h1 class="font-bold">[MD]</h1>
+  <div class="hidden w-auto lg:block">
+    <ul class="flex flex-col text-gray-600 lg:flex-row">
+      {
+        navbarItems.map((item) => (
+          <a
+            class:list={["p-4", isActive(item.href) && "text-gray-900"]}
+            rel="prefetch"
+            href={item.href}
+          >
+            <span>{item.label}</span>
+          </a>
+        ))
+      }
+    </ul>
+  </div>
+</nav>

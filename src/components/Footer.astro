@@ -4,12 +4,12 @@ import { name, legalName, phoneNumber, email, mission } from "../data/company";
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="footer">
-  <div class="container is-max-widescreen">
-    <div class="columns">
-      <div class="column">
+<footer class="bg-amber-50 text-gray-700">
+  <div class="container mx-auto w-4/5 max-w-7xl space-y-3 py-24">
+    <div class="flex flex-col lg:flex-row">
+      <div class="flex-1">
         <div>
-          <h4 class="title is-size-6 mb-2">Contact Us</h4>
+          <h4 class="mb-2 font-title font-semibold">Contact Us</h4>
           <p class="company-name">{name}</p>
 
           <p class="company-phoneNumber">
@@ -24,8 +24,8 @@ const currentYear = new Date().getFullYear();
           </p>
         </div>
       </div>
-      <div class="column is-3">
-        <h4 class="title is-size-6 mb-2">Navigation</h4>
+      <div class="flex-1">
+        <h4 class="mb-2 font-title font-semibold">Navigation</h4>
         <nav>
           <ul>
             <li>
@@ -40,12 +40,12 @@ const currentYear = new Date().getFullYear();
           </ul>
         </nav>
       </div>
-      <div class="column">
-        <p class="title is-size-6 mb-2">Mission Statement</p>
+      <div class="flex-1">
+        <p class="mb-2 font-title font-semibold">Mission Statement</p>
         <p>{mission}</p>
       </div>
     </div>
-    <p class="has-text-centered">
+    <p class="text-center">
       &copy; {currentYear}
       {legalName}
     </p>
