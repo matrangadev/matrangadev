@@ -3,103 +3,114 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="Contact Us">
-  <section class="section">
-    <div class="container is-max-widescreen">
-      <h1 class="title">Contact Us</h1>
-      <h2 class="subtitle">
-        Send us a message or schedule a <strong>free</strong> consultation
-      </h2>
+  <main>
+    <section
+      class="bg-gradient bg-gradient-to-br from-amber-400 to-amber-300 text-gray-800"
+    >
+      <div
+        class="container mx-auto w-4/5 max-w-7xl space-y-5 pb-20 pt-36 text-center font-title lg:pb-16 lg:pt-36"
+      >
+        <h1 class="text-4xl font-semibold md:text-5xl lg:text-6xl">
+          Contact Us
+        </h1>
 
-      <div class="columns">
-        <div class="column">
-          <form name="contact" netlify>
-            <div class="field">
-              <label for="name" class="label"
-                >Name <span class="has-text-danger">*</span>
-              </label>
-              <div class="control">
-                <input
-                  id="name"
-                  name="name"
-                  class="input"
-                  type="text"
-                  placeholder="Your name"
-                  required
-                />
-              </div>
-            </div>
-
-            <div class="field">
-              <label for="phone" class="label">Phone</label>
-              <div class="control">
-                <input
-                  id="phone"
-                  name="phone"
-                  class="input"
-                  type="tel"
-                  placeholder="The best phone number to reach you"
-                />
-              </div>
-            </div>
-
-            <div class="field">
-              <label for="email" class="label"
-                >Email <span class="has-text-danger">*</span>
-              </label>
-              <div class="control">
-                <input
-                  id="email"
-                  name="email"
-                  class="input"
-                  type="email"
-                  placeholder="The best email to reach you"
-                  required
-                />
-              </div>
-            </div>
-
-            <div class="field">
-              <label for="message" class="label"
-                >Message <span class="has-text-danger">*</span>
-              </label>
-              <div class="control">
-                <textarea
-                  id="message"
-                  name="message"
-                  class="textarea"
-                  placeholder="Are there particular services you are interested in? Or would you just like to schedule a call to learn more for no charge? Feel free to give us as much or as little detail as desired."
-                  required></textarea>
-              </div>
-            </div>
-
-            <button class="button is-primary is-fullwidth" type="submit"
-              >Send Message</button
-            >
-          </form>
-        </div>
-        <div class="column">
-          <!-- Calendly inline widget begin -->
-          <div
-            class="calendly-inline-widget"
-            data-url="https://calendly.com/matrangadev?hide_landing_page_details=1"
-            style="min-width:320px;height:630px;"
-          >
-          </div>
-          <script
-            type="text/javascript"
-            src="https://assets.calendly.com/assets/external/widget.js"
-            async
-          ></script>
-          <!-- Calendly inline widget end -->
-        </div>
+        <h2 class="text-xl">
+          Send us a message or schedule a free consultation
+        </h2>
       </div>
-    </div>
-  </section>
-</BaseLayout>
+    </section>
 
-<style>
-  .note {
-    position: sticky;
-    top: 2rem;
-  }
-</style>
+    <section
+      class="container mx-auto flex w-4/5 max-w-7xl flex-col items-start space-y-24 py-20 text-left lg:flex-row lg:space-y-0 lg:space-x-7 lg:px-11"
+    >
+      <div class="w-full flex-1">
+        <form
+          class="space-y-5 rounded-lg lg:border lg:bg-gray-50 lg:p-11"
+          name="contact"
+          netlify
+        >
+          <div>
+            <label for="name" class="mb-1 block font-title font-semibold"
+              >Name <span class="has-text-danger">*</span>
+            </label>
+            <div>
+              <input
+                id="name"
+                name="name"
+                class="w-full border p-2"
+                type="text"
+                placeholder="Your name"
+                required
+              />
+            </div>
+          </div>
+
+          <div>
+            <label for="phone" class="mb-1 block font-title font-semibold"
+              >Phone</label
+            >
+            <div>
+              <input
+                id="phone"
+                name="phone"
+                class="w-full border p-2"
+                type="tel"
+                placeholder="The best phone number to reach you"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label for="email" class="mb-1 block font-title font-semibold"
+              >Email <span class="has-text-danger">*</span>
+            </label>
+            <div>
+              <input
+                id="email"
+                name="email"
+                class="w-full border p-2"
+                type="email"
+                placeholder="The best email to reach you"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="message" class="mb-1 block font-title font-semibold"
+              >Message <span class="has-text-danger">*</span>
+            </label>
+            <div>
+              <textarea
+                id="message"
+                name="message"
+                class="max-h-64 w-full w-full min-w-full max-w-full border p-2"
+                placeholder="Are there particular services you are interested in? Or would you just like to schedule a call to learn more for no charge? Feel free to give us as much or as little detail as desired."
+                required></textarea>
+            </div>
+          </div>
+
+          <button
+            class="w-full rounded-full border bg-amber-300 p-2 font-title font-semibold text-gray-600"
+            type="submit">Send Message</button
+          >
+        </form>
+      </div>
+      <div class="w-full flex-1">
+        <!-- Calendly inline widget begin -->
+        <div
+          class="calendly-inline-widget rounded-lg"
+          data-url="https://calendly.com/matrangadev?hide_landing_page_details=1"
+          style="min-width:320px;height:630px;"
+        >
+        </div>
+        <script
+          type="text/javascript"
+          src="https://assets.calendly.com/assets/external/widget.js"
+          async
+        ></script>
+        <!-- Calendly inline widget end -->
+      </div>
+    </section>
+  </main>
+</BaseLayout>
