@@ -11,14 +11,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       class="bg-gradient bg-gradient-to-br from-amber-400 to-amber-300 text-gray-800"
     >
       <div
-        class="container mx-auto w-4/5 max-w-7xl space-y-5 pb-20 pt-36 text-center font-title lg:pb-40 lg:pt-56"
+        class="container mx-auto w-4/5 max-w-7xl space-y-5 pb-20 pt-36 text-center font-title lg:pb-32 lg:pt-48"
       >
         <h1 class="text-5xl font-semibold md:text-6xl lg:text-8xl">
           {name}
         </h1>
         <h2 class="text-3xl lg:text-4xl">
           {tagLinePrefix}&nbsp;
-          <br class="lg:hidden" />
+          <br class="xl:hidden" />
           <span id="location" class="font-semibold underline"></span>
         </h2>
       </div>
@@ -70,22 +70,20 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </section>
 
     <section
-      class="container mx-auto w-4/5 max-w-7xl space-y-14 py-24 text-center font-title"
+      class="container mx-auto mb-28 w-4/5 max-w-7xl space-y-11 rounded-lg py-16 text-center font-title text-gray-700 lg:bg-amber-600 lg:px-11 lg:text-white"
     >
-      <div
-        class="rounded-lg bg-amber-600 p-11 text-4xl font-semibold text-white lg:text-5xl"
-      >
-        <h1>Who We Are</h1>
-      </div>
-      <p class="text-justify text-lg text-gray-800">
+      <h1 class="text-4xl font-semibold lg:text-5xl">Who We Are</h1>
+      <p class="text-xl">
         <span class="font-semibold">Matranga Development</span>
         is a mission-driven, software development and consulting agency you can depend
         on to serve your organization's technology needs. Owned by a RPI graduate
         working in the financial technology industry, we seek to give back to the
         upstate communities that we've benefited from. We work with you to determine
-        how we can provide the <span class="font-semibold text-amber-500"
+        how we can provide the <span
+          class="font-semibold text-amber-500 lg:text-gray-700"
           >maximum value</span
-        > to you at the <span class="font-semibold text-amber-500"
+        > to you at the <span
+          class="font-semibold text-amber-500 lg:text-gray-700"
           >minimum cost</span
         >. Whether your needs range from a basic informational website to more
         complex software systems, we will happily meet you where you are.
@@ -93,13 +91,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </section>
 
     <section
-      class="container mx-auto w-4/5 max-w-7xl space-y-14 py-11 text-center font-title"
+      class="container mx-auto mb-28 w-4/5 max-w-7xl space-y-20 text-center font-title"
     >
-      <div class="text-4xl font-semibold lg:text-5xl">
+      <div class="text-4xl font-semibold text-gray-700 lg:text-5xl">
         <h1>Our Offered Services</h1>
       </div>
       <div
-        class="flex flex-col space-y-5 text-white lg:flex-row lg:space-x-5 lg:space-y-0"
+        class="flex flex-col space-y-5 text-gray-700 lg:flex-row lg:space-x-5 lg:space-y-0"
       >
         <div
           class="w-full cursor-pointer space-y-4 rounded-lg bg-amber-400 p-10 transition-all hover:scale-105 lg:rounded-none lg:rounded-tl-lg lg:rounded-bl-lg"
