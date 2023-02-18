@@ -28,8 +28,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       class="container mx-auto flex w-4/5 max-w-7xl flex-col items-start text-center lg:flex-row lg:text-left"
     >
       <div class="mx-auto w-60 lg:w-1/2">
-        <video autoplay class="mx-auto lg:w-80">
-          <source src="/assets/coins_stacking.mp4" type="video/mp4" />
+        <video
+          src="/assets/coins_stacking.mp4"
+          autoplay
+          class="mx-auto lg:w-80"
+          playsinline
+          muted
+        >
         </video>
       </div>
       <div class="mt-10 space-y-6 px-11 lg:mt-20 lg:w-1/2 lg:py-12">
@@ -97,38 +102,31 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <h1>Our Offered Services</h1>
       </div>
       <div
-        class="flex flex-col space-y-5 text-gray-700 lg:flex-row lg:space-x-5 lg:space-y-0"
+        class="flex flex-col justify-center space-y-5 text-gray-700 lg:flex-row lg:space-x-5 lg:space-y-0"
       >
-        <div
-          class="w-full cursor-pointer space-y-4 rounded-lg bg-amber-400 p-10 transition-all hover:scale-105 lg:rounded-none lg:rounded-tl-lg lg:rounded-bl-lg"
-        >
-          <img
-            class="mx-auto w-52"
-            src="/assets/man_with_questions.svg"
-            alt="Smart phone held in a hand"
-          />
-          <h2 class="text-3xl font-semibold">Technology Consulting</h2>
-        </div>
-        <div
-          class="w-full cursor-pointer space-y-4 rounded-lg bg-amber-400 p-10 transition-all hover:scale-105 lg:rounded-none"
-        >
-          <img
-            class="mx-auto w-52"
-            src="/assets/phone_with_hand.svg"
-            alt="Smart phone held in a hand"
-          />
-          <h2 class="text-3xl font-semibold">Custom Software Development</h2>
-        </div>
-        <div
-          class="w-full cursor-pointer space-y-4 rounded-lg bg-amber-400 p-10 transition-all hover:scale-105 lg:rounded-none lg:rounded-tr-lg lg:rounded-br-lg"
-        >
-          <img
-            class="mx-auto w-52"
-            src="/assets/phone_with_hand.svg"
-            alt="Smart phone held in a hand"
-          />
-          <h2 class="text-3xl font-semibold">Mobile Development</h2>
-        </div>
+        {
+          services.map((service) => (
+            <div class="flex w-full cursor-pointer flex-col  justify-center space-y-4 rounded-lg bg-amber-400 p-10 transition-all hover:scale-105">
+              {service.imageURL ? (
+                <img
+                  class="mx-auto w-52"
+                  src={service.imageURL}
+                  alt={service.mediaAlt}
+                />
+              ) : (
+                <video
+                  class="mx-auto w-72"
+                  src={service.videoURL}
+                  autoplay
+                  muted
+                  playsinline
+                  loop
+                />
+              )}
+              <h2 class="text-3xl font-semibold">{service.name}</h2>
+            </div>
+          ))
+        }
       </div>
     </section>
 
