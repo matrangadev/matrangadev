@@ -11,15 +11,15 @@ const navbarItems: NavbarItem[] = [
   },
   {
     label: "About Us",
-    href: "/about",
+    href: "/about/",
   },
   {
     label: "Contact",
-    href: "/contact",
+    href: "/contact/",
   },
 ];
 
-const isActive = (href: string) => Astro.request.url.endsWith(href);
+const isActive = (href: string) => Astro.url.pathname == href;
 ---
 
 <nav
