@@ -1,25 +1,14 @@
 ---
+import PageHero from "../components/PageHero.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="Contact Us">
   <main>
-    <section
-      class="bg-gradient bg-gradient-to-br from-amber-400 to-amber-300 text-gray-800"
-    >
-      <div
-        class="container mx-auto w-4/5 max-w-7xl space-y-5 pb-20 pt-36 text-center font-title lg:pb-16 lg:pt-36"
-      >
-        <h1 class="text-4xl font-semibold md:text-5xl lg:text-6xl">
-          Contact Us
-        </h1>
-
-        <h2 class="text-xl">
-          Send us a message or schedule a free consultation
-        </h2>
-      </div>
-    </section>
-
+    <PageHero
+      title="Contact Us"
+      subtitle="Send us a message or schedule a free consultation"
+    />
     <section
       class="container mx-auto flex w-4/5 max-w-7xl flex-col items-start space-y-24 py-20 text-left lg:flex-row lg:space-y-0 lg:space-x-7 lg:px-11"
     >

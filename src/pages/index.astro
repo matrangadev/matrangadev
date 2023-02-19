@@ -106,7 +106,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       >
         {
           services.map((service) => (
-            <div class="flex w-full cursor-pointer flex-col  justify-center space-y-4 rounded-lg bg-amber-400 p-10 transition-all hover:scale-105">
+            <a
+              href={service.href}
+              class="flex w-full cursor-pointer flex-col  justify-center space-y-4 rounded-lg bg-amber-400 p-10 transition-all hover:scale-105"
+            >
               {service.imageURL ? (
                 <img
                   class="mx-auto w-52"
@@ -124,7 +127,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                 />
               )}
               <h2 class="text-3xl font-semibold">{service.name}</h2>
-            </div>
+            </a>
           ))
         }
       </div>
