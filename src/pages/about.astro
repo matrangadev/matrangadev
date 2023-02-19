@@ -1,5 +1,4 @@
 ---
-import { Icon } from "astro-icon";
 import PageHero from "../components/PageHero.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
@@ -11,75 +10,66 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       subtitle="Send us a message or schedule a free consultation"
     />
     <section
-      class="container mx-auto flex w-4/5 max-w-7xl flex-col items-start space-y-24 py-20 text-left lg:flex-row lg:space-y-0 lg:space-x-7 lg:px-11"
+      class="container mx-auto flex w-4/5 max-w-7xl flex-col space-y-24 py-20 text-left text-lg text-gray-800 lg:flex-row lg:space-y-0 lg:space-x-7 lg:px-11"
     >
-      <div class="flex">
-        <div class="flex-[4]">
-          <div class="content">
-            <p>
-              👋 Hello! My name is Frank Matranga, and I'm a software engineer,
-              open source developer, and computer science teacher native to New
-              York City.
-            </p>
+      <div class="flex-[2] lg:pr-11">
+        <div>
+          <p class="mb-5 text-2xl font-semibold">
+            👋 Hello! My name is Frank Matranga, and I'm a software engineer,
+            open source developer, and computer science teacher in Troy, NY.
+          </p>
 
-            <p>
-              I studied in Troy and received a dual degree in Information
-              Technology and Web Science & Computer Science from Rensselaer
-              Polytechnic Institute in 2022, and I currently work as a software
-              engineer for <a href="https://www.even.com/" target="_blank"
-                >Even</a
-              > and <a href="https://one.app" target="_blank">ONE</a>.
-            </p>
+          <p class="mb-5">
+            I studied in Troy and received a dual degree in Information
+            Technology and Web Science & Computer Science from Rensselaer
+            Polytechnic Institute in 2022, and I currently work as a software
+            engineer for <a href="https://www.even.com/" target="_blank">Even</a
+            > and <a href="https://one.app" target="_blank">ONE</a>.
+          </p>
 
-            <p>
-              I've taught Computer Science for 7 years, have developed open
-              source software for 9 years, and have been developing fundraising
-              software for nonprofits in my hometown of The Bronx for the past 2
-              years.
-            </p>
+          <p class="mb-5">
+            I've taught Computer Science for 7 years, have developed open source
+            software for 9 years, and have been developing fundraising software
+            for nonprofits in my hometown of The Bronx for the past 2 years.
+          </p>
 
-            <p>
-              After living in the Capital Region during my studies at RPI, I've
-              come to love and appreciate the area and its communities. I'm
-              seeking to give back to those communities by offering my services
-              inexpensively to local small businesses and nonprofits.
-            </p>
+          <p class="mb-5">
+            After living in the Capital Region during my studies at RPI, I've
+            come to love and appreciate the area and its communities. I'm
+            seeking to give back to those communities by offering my services
+            inexpensively to local small businesses and nonprofits.
+          </p>
 
-            <p>
-              As a full stack software engineer and general technologist, I can
-              wear many hats. Besides software development, I can offer the
-              graphic design, user interface design, image editing, audio
-              editing, video editing, online advertising, database management,
-              and testing that often is needed for technology projects.
-            </p>
-          </div>
-
-          <a
-            class="button"
-            href="https://www.linkedin.com/in/frank-matranga/"
-            target="_blank"
-          >
-            <span class="icon">
-              <Icon name="mdi:linkedin" />
-            </span>
-            <span>My LinkedIn Profile</span>
-          </a>
-
-          <a class="button" href="https://github.com/Apexal" target="_blank">
-            <span class="icon">
-              <Icon name="mdi:github" />
-            </span>
-            <span>My GitHub</span>
-          </a>
+          <p class="mb-5">
+            As a full stack software engineer and general technologist, I can
+            wear many hats. Besides software development, I can offer the
+            graphic design, user interface design, image editing, audio editing,
+            video editing, online advertising, database management, and testing
+            that often is needed for technology projects.
+          </p>
         </div>
-        <div class="flex-1">
-          <img
-            width="350px"
-            src="/assets/Matranga_Frank_web.jpg"
-            alt="Headshot of Frank Matranga"
-            class="headshot"
-          />
-        </div>
+
+        <a
+          class="button"
+          href="https://www.linkedin.com/in/frank-matranga/"
+          target="_blank"
+        >
+          <span class="icon"> </span>
+          <span>My LinkedIn Profile</span>
+        </a>
+
+        <a class="button" href="https://github.com/Apexal" target="_blank">
+          <span class="icon"> </span>
+          <span>My GitHub</span>
+        </a>
+      </div>
+      <div class="flex-1">
+        <img
+          width="350px"
+          src="/assets/Matranga_Frank_web.jpg"
+          alt="Headshot of Frank Matranga"
+          class="headshot"
+        />
       </div>
     </section>
   </main>

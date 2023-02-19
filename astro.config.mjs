@@ -12,5 +12,5 @@ import tailwind from "@astrojs/tailwind";
 // https://astro.build/config
 export default defineConfig({
   site: "https://www.matranga.dev",
-  integrations: [compress(), sitemap(), prefetch(), robotsTxt(), tailwind()]
+  integrations: [sitemap(), prefetch(), robotsTxt(), tailwind(), compress()],
 });
