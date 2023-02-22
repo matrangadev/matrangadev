@@ -23,12 +23,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </div>
     </section>
 
-    <section
-      id="start"
-      class="container mx-auto flex w-4/5 max-w-7xl flex-col items-center py-10 text-center lg:flex-row lg:text-left"
-    >
-      <div class="animated slide-in mx-auto lg:w-1/2">
-        <!-- <video
+    <div class="my-28 space-y-44">
+      <section
+        id="start"
+        class="container mx-auto flex w-4/5 max-w-7xl flex-col items-center text-center lg:flex-row lg:text-left"
+      >
+        <div class="animated slide-in mx-auto lg:w-1/2">
+          <!-- <video
           src="/assets/coins_stacking.mp4"
           autoplay
           class="mx-auto lg:w-80"
@@ -36,109 +37,114 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           muted
         >
         </video> -->
-        <img
-          src="/assets/splash/accounting.svg"
-          alt="Man with calculator"
-          class="mx-auto w-full max-w-md"
-        />
-      </div>
-      <div
-        class="animated slide-in from-right mt-10 space-y-6 lg:mt-20 lg:w-1/2 lg:px-11 lg:py-12"
-      >
-        <h2 class="leading-12 font-title text-5xl font-semibold text-gray-800">
-          We want to save you <span class="text-amber-500 underline">
-            money</span
+          <img
+            src="/assets/splash/accounting.svg"
+            alt="Man with calculator"
+            class="mx-auto w-full max-w-md"
+          />
+        </div>
+        <div
+          class="animated slide-in from-right mt-10 space-y-6 lg:mt-20 lg:w-1/2 lg:px-11 lg:py-12"
+        >
+          <h2
+            class="leading-12 font-title text-5xl font-semibold text-gray-800"
           >
-        </h2>
-        <p class="font-title text-xl font-medium text-gray-600">
-          By making the right technology choices for your organization. Whether
-          that means helping you select the best existing tools and services, or
-          making them from scratch for your exact needs.
-        </p>
-      </div>
-    </section>
-
-    <section
-      class="container mx-auto flex w-4/5 max-w-7xl flex-col items-center py-10 text-center lg:flex-row-reverse lg:text-left"
-    >
-      <div class="animated slide-in from-right mx-auto lg:w-1/2">
-        <img
-          src="/assets/splash/short_of_time.svg"
-          alt="Man with clock"
-          class="mx-auto w-full max-w-md"
-        />
-      </div>
-      <div class="animated slide-in space-y-6 lg:w-1/2 lg:px-11">
-        <h2 class="leading-12 font-title text-5xl font-semibold text-gray-800">
-          We want to save you <span class="text-amber-500 underline">
-            time</span
-          >
-        </h2>
-        <p class="font-title text-xl font-medium text-gray-600">
-          By automating the processes that you do monthly, weekly, and daily to
-          keep your organization running.
-        </p>
-      </div>
-    </section>
-
-    <section
-      class="container mx-auto mb-28 w-4/5 max-w-7xl space-y-11 rounded-lg py-16 text-center font-title text-gray-700 lg:bg-amber-100 lg:px-11"
-    >
-      <h1 class="text-4xl font-semibold lg:text-5xl">Who We Are</h1>
-      <p class="text-xl">
-        <span class="font-semibold">Matranga Development</span>
-        is a mission-driven, software development and consulting agency you can depend
-        on to serve your organization's technology needs. Owned by a RPI graduate
-        working in the financial technology industry, we seek to give back to the
-        upstate communities that we've benefited from. We work with you to determine
-        how we can provide the <span
-          class="font-semibold text-amber-500 lg:text-gray-700"
-          >maximum value</span
-        > to you at the <span
-          class="font-semibold text-amber-500 lg:text-gray-700"
-          >minimum cost</span
-        >. Whether your needs range from a basic informational website to more
-        complex software systems, we will happily meet you where you are.
-      </p>
-    </section>
-
-    <section
-      class="container mx-auto mb-28 w-4/5 max-w-7xl space-y-20 text-center font-title"
-    >
-      <div class="text-4xl font-semibold text-gray-700 lg:text-5xl">
-        <h1>Our Offered Services</h1>
-      </div>
-      <div
-        class="flex flex-col justify-center space-y-5 text-gray-700 lg:flex-row lg:space-x-5 lg:space-y-0"
-      >
-        {
-          services.map((service) => (
-            <a
-              href={service.href}
-              class="animated slide-up staggered flex w-full cursor-pointer flex-col  justify-center space-y-4 rounded-lg bg-amber-400 p-10 transition-all "
+            We want to save you <span class="text-amber-500 underline">
+              money</span
             >
-              {service.imageURL ? (
-                <img
-                  class="mx-auto w-52"
-                  src={service.imageURL}
-                  alt={service.mediaAlt}
-                />
-              ) : (
-                <video
-                  class="mx-auto w-72"
-                  src={service.videoURL}
-                  autoplay
-                  muted
-                  playsinline
-                  loop
-                />
-              )}
-              <h2 class="text-3xl font-semibold">{service.name}</h2>
-            </a>
-          ))
-        }
-      </div>
-    </section>
+          </h2>
+          <p class="font-title text-xl font-medium text-gray-600">
+            By making the right technology choices for your organization.
+            Whether that means helping you select the best existing tools and
+            services, or making them from scratch for your exact needs.
+          </p>
+        </div>
+      </section>
+
+      <section
+        class="container mx-auto flex w-4/5 max-w-7xl flex-col items-center text-center lg:flex-row-reverse lg:text-left"
+      >
+        <div class="animated slide-in from-right mx-auto lg:w-1/2">
+          <img
+            src="/assets/splash/short_of_time.svg"
+            alt="Man with clock"
+            class="mx-auto w-full max-w-md"
+          />
+        </div>
+        <div class="animated slide-in space-y-6 lg:w-1/2 lg:px-11">
+          <h2
+            class="leading-12 font-title text-5xl font-semibold text-gray-800"
+          >
+            We want to save you <span class="text-amber-500 underline">
+              time</span
+            >
+          </h2>
+          <p class="font-title text-xl font-medium text-gray-600">
+            By automating the processes that you do monthly, weekly, and daily
+            to keep your organization running.
+          </p>
+        </div>
+      </section>
+
+      <section
+        class="container mx-auto w-4/5 max-w-7xl space-y-11 rounded-lg py-16 text-center font-title text-gray-700 lg:bg-amber-100 lg:px-11"
+      >
+        <h1 class="text-4xl font-semibold lg:text-5xl">Who We Are</h1>
+        <p class="text-xl">
+          <span class="font-semibold">Matranga Development</span>
+          is a mission-driven, software development and consulting agency you can
+          depend on to serve your organization's technology needs. Owned by a RPI
+          graduate working in the financial technology industry, we seek to give
+          back to the upstate communities that we've benefited from. We work with
+          you to determine how we can provide the <span
+            class="font-semibold text-amber-500 lg:text-gray-700"
+            >maximum value</span
+          > to you at the <span
+            class="font-semibold text-amber-500 lg:text-gray-700"
+            >minimum cost</span
+          >. Whether your needs range from a basic informational website to more
+          complex software systems, we will happily meet you where you are.
+        </p>
+      </section>
+
+      <section
+        class="container mx-auto w-4/5 max-w-7xl space-y-20 text-center font-title"
+      >
+        <div class="text-4xl font-semibold text-gray-700 lg:text-5xl">
+          <h1>Our Services</h1>
+        </div>
+        <div
+          class="flex flex-col justify-center space-y-5 text-gray-700 lg:flex-row lg:space-x-5 lg:space-y-0"
+        >
+          {
+            services.map((service) => (
+              <a
+                href={service.href}
+                class="animated slide-up staggered flex w-full cursor-pointer flex-col  justify-center space-y-4 rounded-lg bg-amber-400 p-10 transition-all "
+              >
+                {service.imageURL ? (
+                  <img
+                    class="mx-auto w-52"
+                    src={service.imageURL}
+                    alt={service.mediaAlt}
+                  />
+                ) : (
+                  <video
+                    class="mx-auto w-72"
+                    src={service.videoURL}
+                    autoplay
+                    muted
+                    playsinline
+                    loop
+                  />
+                )}
+                <h2 class="text-3xl font-semibold">{service.name}</h2>
+              </a>
+            ))
+          }
+        </div>
+      </section>
+    </div>
 
     <script defer src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"
     ></script>
@@ -194,7 +200,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   @media screen and (min-width: 1000px) {
     .animated {
       transition-duration: 1s;
-      transition-delay: 500ms;
+      transition-delay: 200ms;
       transition-property: opacity, filter, transform;
     }
 
@@ -219,11 +225,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     }
 
     .animated.staggered:nth-child(2) {
-      transition-delay: 1s;
+      transition-delay: 0.4s;
     }
 
     .animated.staggered:nth-child(3) {
-      transition-delay: 1.5s;
+      transition-delay: 0.6s;
     }
 
     .animated.slide-in.active {
