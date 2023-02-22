@@ -5,12 +5,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout>
-  <main>
+  <main class="overflow-hidden">
     <section
       class="bg-gradient bg-gradient-to-br from-amber-400 to-amber-300 text-gray-800"
     >
       <div
-        class="container mx-auto w-4/5 max-w-7xl space-y-5 pb-20 pt-36 text-center font-title lg:pb-32 lg:pt-48"
+        class="container mx-auto w-4/5 max-w-7xl space-y-7 pb-20 pt-36 text-center font-title lg:pb-40 lg:pt-52"
       >
         <h1 class="text-5xl font-semibold md:text-6xl lg:text-8xl">
           {name}
@@ -24,19 +24,27 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </section>
 
     <section
-      class="container mx-auto flex w-4/5 max-w-7xl flex-col items-start text-center lg:flex-row lg:text-left"
+      id="start"
+      class="container mx-auto flex w-4/5 max-w-7xl flex-col items-center py-10 text-center lg:flex-row lg:text-left"
     >
-      <div class="mx-auto w-60 lg:w-1/2">
-        <video
+      <div class="animated slide-in mx-auto lg:w-1/2">
+        <!-- <video
           src="/assets/coins_stacking.mp4"
           autoplay
           class="mx-auto lg:w-80"
           playsinline
           muted
         >
-        </video>
+        </video> -->
+        <img
+          src="/assets/splash/accounting.svg"
+          alt="Man with calculator"
+          class="mx-auto w-full max-w-md"
+        />
       </div>
-      <div class="mt-10 space-y-6 px-11 lg:mt-20 lg:w-1/2 lg:py-12">
+      <div
+        class="animated slide-in from-right mt-10 space-y-6 lg:mt-20 lg:w-1/2 lg:px-11 lg:py-12"
+      >
         <h2 class="leading-12 font-title text-5xl font-semibold text-gray-800">
           We want to save you <span class="text-amber-500 underline">
             money</span
@@ -51,16 +59,16 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </section>
 
     <section
-      class="container mx-auto flex w-4/5 max-w-7xl flex-col items-center py-20 text-center lg:flex-row-reverse lg:text-left"
+      class="container mx-auto flex w-4/5 max-w-7xl flex-col items-center py-10 text-center lg:flex-row-reverse lg:text-left"
     >
-      <div class="mx-auto w-64 lg:w-1/2">
+      <div class="animated slide-in from-right mx-auto lg:w-1/2">
         <img
-          src="/assets/man_with_clock.svg"
+          src="/assets/splash/short_of_time.svg"
           alt="Man with clock"
-          class="mx-auto w-80"
+          class="mx-auto w-full max-w-md"
         />
       </div>
-      <div class="space-y-6 px-11 lg:w-1/2">
+      <div class="animated slide-in space-y-6 lg:w-1/2 lg:px-11">
         <h2 class="leading-12 font-title text-5xl font-semibold text-gray-800">
           We want to save you <span class="text-amber-500 underline">
             time</span
@@ -107,7 +115,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           services.map((service) => (
             <a
               href={service.href}
-              class="flex w-full cursor-pointer flex-col  justify-center space-y-4 rounded-lg bg-amber-400 p-10 transition-all hover:scale-105"
+              class="animated slide-up staggered flex w-full cursor-pointer flex-col  justify-center space-y-4 rounded-lg bg-amber-400 p-10 transition-all "
             >
               {service.imageURL ? (
                 <img
@@ -132,7 +140,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </div>
     </section>
 
-    <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
+    <script defer src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"
+    ></script>
     <script>
       import TypeIt from "typeit";
 
@@ -165,5 +174,67 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         typer.go();
       });
     </script>
+
+    <script defer>
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+          }
+        });
+      });
+
+      const animatedElements = document.querySelectorAll(".animated");
+      animatedElements.forEach((el) => observer.observe(el));
+    </script>
   </main>
 </BaseLayout>
+
+<style>
+  @media screen and (min-width: 1000px) {
+    .animated {
+      transition-duration: 1s;
+      transition-delay: 500ms;
+      transition-property: opacity, filter, transform;
+    }
+
+    .animated.slide-in {
+      opacity: 0;
+      filter: blur(2px);
+      transform: translateX(-100%);
+    }
+
+    .animated.slide-up {
+      opacity: 0;
+      filter: blur(2px);
+      transform: translateY(100%);
+    }
+
+    .animated.slide-in.from-right {
+      transform: translateX(100%);
+    }
+
+    .animated.staggered {
+      transition-duration: 1s !important;
+    }
+
+    .animated.staggered:nth-child(2) {
+      transition-delay: 1s;
+    }
+
+    .animated.staggered:nth-child(3) {
+      transition-delay: 1.5s;
+    }
+
+    .animated.slide-in.active {
+      opacity: 1;
+      filter: blur(0);
+      transform: translateX(0);
+    }
+    .animated.slide-up.active {
+      opacity: 1;
+      filter: blur(0);
+      transform: translateY(0);
+    }
+  }
+</style>
