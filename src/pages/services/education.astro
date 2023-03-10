@@ -4,7 +4,11 @@ import Columns from "../../components/Columns.astro";
 import EducationTopic from "../../components/EducationTopic.astro";
 import PageHero from "../../components/PageHero.astro";
 import Section from "../../components/Section.astro";
-import { topicRows } from "../../data/education";
+import {
+  educationPrivatePrices,
+  educationGroupPrices,
+  topicRows,
+} from "../../data/education";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 ---
 
@@ -14,8 +18,82 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       title="Computer Science Education"
       subtitle="My roots are in teaching Computer Science to students aged 5-18 for 7 years in both 1-on-1 and group settings. I'll work with your student no matter their experience level."
     />
+
     <Section>
-      <h1 class="mb-10 text-4xl font-bold">Offered Topics</h1>
+      <h1 class="text-center font-title text-4xl font-semibold lg:text-5xl">
+        Private Lessons
+      </h1>
+
+      <Columns className="items-center">
+        <Column>
+          <img
+            src="/assets/services/education/125-Online-Education.svg"
+            alt="Online tutor and student"
+          />
+        </Column>
+        <Column>
+          <div class="text-center font-title">
+            {
+              educationPrivatePrices.map((price) => (
+                <div class="mb-10">
+                  <h2 class="mb-2 text-2xl font-semibold text-gray-700">
+                    {price.name}
+                  </h2>
+                  <p class="font-bold">
+                    <span class="text-5xl text-amber-500">
+                      ${price.dollarsPerHour}
+                    </span>
+                    <span class="text-3xl">/hr</span>
+                  </p>
+                </div>
+              ))
+            }
+          </div>
+        </Column>
+      </Columns>
+    </Section>
+
+    <Section>
+      <h1 class="text-center font-title text-4xl font-semibold lg:text-5xl">
+        Group Lessons
+      </h1>
+
+      <Columns className="items-center">
+        <Column>
+          <div class="text-center font-title">
+            {
+              educationGroupPrices.map((price) => (
+                <div class="mb-10">
+                  <h2 class="mb-2 text-2xl font-semibold text-gray-700">
+                    {price.name}
+                  </h2>
+                  <p class="font-bold">
+                    <span class="text-5xl text-amber-500">
+                      ${price.dollarsPerHour}
+                    </span>
+                    <span class="text-3xl">/hr</span>
+                  </p>
+                </div>
+              ))
+            }
+          </div>
+        </Column>
+
+        <Column>
+          <img
+            src="/assets/services/education/123-Collaboration.svg"
+            alt="Online tutor and student"
+          />
+        </Column>
+      </Columns>
+    </Section>
+
+    <Section>
+      <h1
+        class="mb-10 text-center font-title text-4xl font-semibold lg:text-5xl"
+      >
+        Offered Topics
+      </h1>
 
       {
         topicRows.map((row) => (
@@ -28,6 +106,14 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
           </Columns>
         ))
       }
+
+      <div>
+        <a
+          href="/contact"
+          class="block w-full rounded-lg bg-amber-300 py-5 text-center font-title text-2xl font-bold text-gray-700"
+          >Get Started</a
+        >
+      </div>
     </Section>
   </main>
 </BaseLayout>
