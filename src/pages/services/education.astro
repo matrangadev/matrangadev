@@ -1,0 +1,33 @@
+---
+import Column from "../../components/Column.astro";
+import Columns from "../../components/Columns.astro";
+import EducationTopic from "../../components/EducationTopic.astro";
+import PageHero from "../../components/PageHero.astro";
+import Section from "../../components/Section.astro";
+import { topicRows } from "../../data/education";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Computer Science Education">
+  <main>
+    <PageHero
+      title="Computer Science Education"
+      subtitle="My roots are in teaching Computer Science to students aged 5-18 for 7 years in both 1-on-1 and group settings. I'll work with your student no matter their experience level."
+    />
+    <Section>
+      <h1 class="mb-10 text-4xl font-bold">Offered Topics</h1>
+
+      {
+        topicRows.map((row) => (
+          <Columns className="mb-10">
+            {row.map((topic) => (
+              <Column>
+                <EducationTopic topic={topic} />
+              </Column>
+            ))}
+          </Columns>
+        ))
+      }
+    </Section>
+  </main>
+</BaseLayout>

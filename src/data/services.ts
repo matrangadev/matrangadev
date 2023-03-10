@@ -3,13 +3,13 @@ type Service = {
   mediaAlt: string;
   href: string;
 } & (
-    | {
+  | {
       imageURL: string;
     }
-    | {
+  | {
       videoURL: string;
     }
-  );
+);
 
 export const services: Service[] = [
   {
@@ -28,6 +28,6 @@ export const services: Service[] = [
     name: "Computer Science Education",
     videoURL: "/assets/person_typing.mp4",
     mediaAlt: "Smart phone held in a hand",
-    href: "/coming-soon",
+    href: "/services/education",
   },
 ];

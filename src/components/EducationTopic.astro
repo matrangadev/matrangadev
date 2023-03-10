@@ -1,0 +1,17 @@
+---
+import type { Topic } from "../data/education";
+
+export interface Props {
+  topic: Topic;
+}
+
+const {
+  topic: { name },
+} = Astro.props;
+---
+
+<div class="rounded-lg border bg-gray-100 p-11">
+  <h1 class="text-center text-3xl font-bold text-gray-800">
+    {name}
+  </h1>
+</div>

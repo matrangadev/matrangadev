@@ -1,0 +1,16 @@
+---
+export interface Props {
+  className: string;
+}
+
+const { className } = Astro.props;
+---
+
+<div
+  class:list={[
+    "flex w-full flex-col items-start space-y-10 xl:flex-row xl:space-y-0 xl:space-x-10",
+    className,
+  ]}
+>
+  <slot />
+</div>
