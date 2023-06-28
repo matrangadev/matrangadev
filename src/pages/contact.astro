@@ -7,102 +7,100 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="Contact Me">
-  <main>
-    <PageHero
-      title="Contact Me"
-      subtitle="Send me a message or schedule a free consultation"
-    />
-    <Section>
-      <Columns>
-        <Column>
-          <form
-            class="space-y-5 rounded-lg xl:border xl:bg-gray-50 xl:p-11"
-            name="contact"
-            netlify
-          >
+  <PageHero
+    title="Contact Me"
+    subtitle="Send me a message or schedule a free consultation"
+  />
+  <Section>
+    <Columns>
+      <Column>
+        <form
+          class="space-y-5 rounded-lg xl:border xl:bg-gray-50 xl:p-11"
+          name="contact"
+          netlify
+        >
+          <div>
+            <label for="name" class="mb-1 block font-title font-semibold"
+              >Name <span class="has-text-danger">*</span>
+            </label>
             <div>
-              <label for="name" class="mb-1 block font-title font-semibold"
-                >Name <span class="has-text-danger">*</span>
-              </label>
-              <div>
-                <input
-                  id="name"
-                  name="name"
-                  class="w-full border p-2"
-                  type="text"
-                  placeholder="Your name"
-                  required
-                />
-              </div>
+              <input
+                id="name"
+                name="name"
+                class="w-full border p-2"
+                type="text"
+                placeholder="Your name"
+                required
+              />
             </div>
-
-            <div>
-              <label for="phone" class="mb-1 block font-title font-semibold"
-                >Phone</label
-              >
-              <div>
-                <input
-                  id="phone"
-                  name="phone"
-                  class="w-full border p-2"
-                  type="tel"
-                  placeholder="The best phone number to reach you"
-                />
-              </div>
-            </div>
-
-            <div>
-              <label for="email" class="mb-1 block font-title font-semibold"
-                >Email <span class="has-text-danger">*</span>
-              </label>
-              <div>
-                <input
-                  id="email"
-                  name="email"
-                  class="w-full border p-2"
-                  type="email"
-                  placeholder="The best email to reach you"
-                  required
-                />
-              </div>
-            </div>
-
-            <div class="field">
-              <label for="message" class="mb-1 block font-title font-semibold"
-                >Message <span class="has-text-danger">*</span>
-              </label>
-              <div>
-                <textarea
-                  id="message"
-                  name="message"
-                  class="h-32 max-h-64 w-full min-w-full max-w-full border p-2"
-                  placeholder="Are there particular services you are interested in? Or would you just like to schedule a call to learn more for no charge? Feel free to provide as much or as little detail as desired."
-                  required></textarea>
-              </div>
-            </div>
-
-            <button
-              class="w-full rounded-lg border bg-amber-300 p-2 font-title font-semibold text-gray-600"
-              type="submit">Send Message</button
-            >
-          </form>
-        </Column>
-        <Column>
-          <!-- Calendly inline widget begin -->
-          <div
-            class="calendly-inline-widget rounded-lg"
-            data-url="https://calendly.com/matrangadev?hide_landing_page_details=1"
-            style="min-width:320px;height:630px;"
-          >
           </div>
-          <script
-            type="text/javascript"
-            src="https://assets.calendly.com/assets/external/widget.js"
-            async
-          ></script>
-          <!-- Calendly inline widget end -->
-        </Column>
-      </Columns>
-    </Section>
-  </main>
+
+          <div>
+            <label for="phone" class="mb-1 block font-title font-semibold"
+              >Phone</label
+            >
+            <div>
+              <input
+                id="phone"
+                name="phone"
+                class="w-full border p-2"
+                type="tel"
+                placeholder="The best phone number to reach you"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label for="email" class="mb-1 block font-title font-semibold"
+              >Email <span class="has-text-danger">*</span>
+            </label>
+            <div>
+              <input
+                id="email"
+                name="email"
+                class="w-full border p-2"
+                type="email"
+                placeholder="The best email to reach you"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="message" class="mb-1 block font-title font-semibold"
+              >Message <span class="has-text-danger">*</span>
+            </label>
+            <div>
+              <textarea
+                id="message"
+                name="message"
+                class="h-32 max-h-64 w-full min-w-full max-w-full border p-2"
+                placeholder="Are there particular services you are interested in? Or would you just like to schedule a call to learn more for no charge? Feel free to provide as much or as little detail as desired."
+                required></textarea>
+            </div>
+          </div>
+
+          <button
+            class="w-full rounded-lg border bg-amber-300 p-2 font-title font-semibold text-gray-600"
+            type="submit">Send Message</button
+          >
+        </form>
+      </Column>
+      <Column>
+        <!-- Calendly inline widget begin -->
+        <div
+          class="calendly-inline-widget rounded-lg"
+          data-url="https://calendly.com/matrangadev?hide_landing_page_details=1"
+          style="min-width:320px;height:630px;"
+        >
+        </div>
+        <script
+          type="text/javascript"
+          src="https://assets.calendly.com/assets/external/widget.js"
+          async
+        ></script>
+        <!-- Calendly inline widget end -->
+      </Column>
+    </Columns>
+  </Section>
 </BaseLayout>

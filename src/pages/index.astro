@@ -1,276 +1,260 @@
 ---
 import Column from "../components/Column.astro";
 import Columns from "../components/Columns.astro";
-import { name, phoneNumber, tagLinePrefix, mission } from "../data/company";
+import { name, tagLinePrefix } from "../data/company";
 import { services } from "../data/services";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout>
-  <main class="overflow-hidden">
-    <section
-      class="bg-gradient bg-gradient-to-br from-amber-400 to-amber-300 text-gray-800"
+  <section
+    class="bg-gradient bg-gradient-to-br from-amber-400 to-amber-300 text-gray-800"
+  >
+    <div
+      class="container mx-auto w-4/5 max-w-7xl space-y-7 pb-20 pt-36 text-center font-title lg:pb-40 lg:pt-52"
     >
+      <h1 class="text-5xl font-semibold md:text-6xl lg:text-8xl">
+        {name}
+      </h1>
+      <h2 class="text-3xl lg:text-4xl">
+        {tagLinePrefix}&nbsp;
+        <br class="xl:hidden" />
+        <span id="location" class="font-semibold underline"></span>
+      </h2>
+    </div>
+  </section>
+
+  <div class="my-20 space-y-28">
+    <section
+      id="start"
+      class="container mx-auto flex w-4/5 max-w-7xl flex-col items-center text-center lg:flex-row lg:text-left"
+    >
+      <div class="animated slide-in mx-auto lg:w-1/2">
+        <img
+          src="/assets/splash/accounting.svg"
+          alt="Man with calculator"
+          class="mx-auto w-full max-w-md"
+        />
+      </div>
       <div
-        class="container mx-auto w-4/5 max-w-7xl space-y-7 pb-20 pt-36 text-center font-title lg:pb-40 lg:pt-52"
+        class="animated slide-in from-right mt-10 space-y-6 lg:mt-20 lg:w-1/2 lg:px-11 lg:py-12"
       >
-        <h1 class="text-5xl font-semibold md:text-6xl lg:text-8xl">
-          {name}
-        </h1>
-        <h2 class="text-3xl lg:text-4xl">
-          {tagLinePrefix}&nbsp;
-          <br class="xl:hidden" />
-          <span id="location" class="font-semibold underline"></span>
+        <h2 class="leading-12 font-title text-5xl font-semibold text-gray-800">
+          I want to save you <span class="text-amber-500 underline">
+            money</span
+          >
         </h2>
+        <p class="font-title text-xl font-medium text-gray-600">
+          My software has raised six figures for businesses with <strong
+            >$0</strong
+          > in platform maintenance fees. I choose the most efficient and inexpensive
+          tools to get the job done.
+        </p>
       </div>
     </section>
 
-    <div class="my-28 space-y-44">
-      <section
-        id="start"
-        class="container mx-auto flex w-4/5 max-w-7xl flex-col items-center text-center lg:flex-row lg:text-left"
-      >
-        <div class="animated slide-in mx-auto lg:w-1/2">
-          <!-- <video
-          src="/assets/coins_stacking.mp4"
-          autoplay
-          class="mx-auto lg:w-80"
-          playsinline
-          muted
-        >
-        </video> -->
-          <img
-            src="/assets/splash/accounting.svg"
-            alt="Man with calculator"
-            class="mx-auto w-full max-w-md"
-          />
-        </div>
-        <div
-          class="animated slide-in from-right mt-10 space-y-6 lg:mt-20 lg:w-1/2 lg:px-11 lg:py-12"
-        >
-          <h2
-            class="leading-12 font-title text-5xl font-semibold text-gray-800"
-          >
-            I want to save you <span class="text-amber-500 underline">
-              money</span
-            >
-          </h2>
-          <p class="font-title text-xl font-medium text-gray-600">
-            My software has raised six figures for businesses with <strong
-              >$0</strong
-            > in platform maintenance fees. I choose the most efficient and inexpensive
-            tools to get the job done.
-          </p>
-        </div>
-      </section>
-
-      <section
-        class="container mx-auto flex w-4/5 max-w-7xl flex-col items-center text-center lg:flex-row-reverse lg:text-left"
-      >
-        <div class="animated slide-in from-right mx-auto lg:w-1/2">
-          <img
-            src="/assets/splash/short_of_time.svg"
-            alt="Man with clock"
-            class="mx-auto w-full max-w-md"
-          />
-        </div>
-        <div class="animated slide-in space-y-6 lg:w-1/2 lg:px-11">
-          <h2
-            class="leading-12 font-title text-5xl font-semibold text-gray-800"
-          >
-            I want to save you <span class="text-amber-500 underline">
-              time</span
-            >
-          </h2>
-          <p class="font-title text-xl font-medium text-gray-600">
-            Do you jump between a dozen different platforms to manage your
-            organization's emails, customers, services, products, data, etc.? My
-            specialty is in developing a <strong>single</strong> platform for your
-            <strong>exact</strong> needs.
-          </p>
-        </div>
-      </section>
-
-      <section
-        class="container mx-auto w-4/5 max-w-7xl space-y-11 rounded-lg py-16 text-center font-title text-gray-700 lg:bg-amber-100 lg:px-11"
-      >
-        <h1 class="text-4xl font-semibold lg:text-5xl">Who I Am</h1>
-        <p class="text-xl">
-          <span class="font-semibold">Matranga Development</span>
-          is a mission-driven technology consulting agency owned by <a
-            href="/about">Frank Matranga</a
-          > in Troy, NY. I provide technology services ranging from teaching to IT
-          consulting to software development, specializing in local non-profits and
-          small businesses. I aim to use <span
-            class="font-semibold text-amber-500 lg:text-gray-700"
-            >modern technology</span
-          > to <span class="font-semibold text-amber-500 lg:text-gray-700"
-            >give back</span
-          > to the Capital Region community.
+    <section
+      class="container mx-auto flex w-4/5 max-w-7xl flex-col items-center text-center lg:flex-row-reverse lg:text-left"
+    >
+      <div class="animated slide-in from-right mx-auto lg:w-1/2">
+        <img
+          src="/assets/splash/short_of_time.svg"
+          alt="Man with clock"
+          class="mx-auto w-full max-w-md"
+        />
+      </div>
+      <div class="animated slide-in space-y-6 lg:w-1/2 lg:px-11">
+        <h2 class="leading-12 font-title text-5xl font-semibold text-gray-800">
+          I want to save you <span class="text-amber-500 underline"> time</span>
+        </h2>
+        <p class="font-title text-xl font-medium text-gray-600">
+          Do you jump between a dozen different platforms to manage your
+          organization's emails, customers, services, products, data, etc.? My
+          specialty is in developing a <strong>single</strong> platform for your
+          <strong>exact</strong> needs.
         </p>
-      </section>
+      </div>
+    </section>
 
-      <section
-        id="counters"
-        class="container mx-auto w-4/5 max-w-7xl flex-row space-y-20 text-center font-title"
+    <section
+      class="container mx-auto w-4/5 max-w-7xl space-y-11 rounded-lg py-16 text-center font-title text-gray-700 lg:bg-amber-100 lg:px-11"
+    >
+      <h1 class="text-4xl font-semibold lg:text-5xl">Who I Am</h1>
+      <p class="text-xl">
+        <span class="font-semibold">Matranga Development</span>
+        is a mission-driven technology consulting agency owned by <a
+          href="/about">Frank Matranga</a
+        > in Troy, NY. I provide technology services ranging from teaching to IT
+        consulting to software development, specializing in local nonprofits and
+        small businesses. I aim to use <span
+          class="font-semibold text-amber-500 lg:text-gray-700"
+          >modern technology</span
+        > to <span class="font-semibold text-amber-500 lg:text-gray-700"
+          >give back</span
+        > to the Capital Region community.
+      </p>
+
+      <Columns className="pt-10">
+        <Column>
+          <h2 class="mb-2 text-2xl text-gray-700">Years of Experience</h2>
+          <p class="text-5xl font-semibold">
+            <span
+              class="animated animate-to"
+              data-animate-to="8"
+              data-animate-ms="1000"
+              id="oss-contributions">0</span
+            >+
+          </p>
+        </Column>
+
+        <Column>
+          <h2 class="mb-2 text-2xl text-gray-700">Open Source Projects</h2>
+          <p class="text-5xl font-semibold">
+            <span
+              class="animated animate-to"
+              data-animate-to="97"
+              data-animate-ms="2000">0</span
+            >+
+          </p>
+        </Column>
+
+        <Column>
+          <h2 class="mb-2 text-2xl text-gray-700">Open Source Contributions</h2>
+          <p class="text-5xl font-semibold">
+            <span
+              class="animated animate-to"
+              data-animate-to="12772"
+              data-animate-ms="3000">0</span
+            >+
+          </p>
+        </Column>
+      </Columns>
+    </section>
+
+    <section
+      id="services"
+      class="container mx-auto w-4/5 max-w-7xl space-y-20 text-center font-title"
+    >
+      <div class="text-4xl font-semibold text-gray-700 lg:text-5xl">
+        <h1>My Services</h1>
+      </div>
+      <div
+        class="flex flex-col justify-center space-y-5 text-gray-700 lg:flex-row lg:space-x-5 lg:space-y-0"
       >
-        <Columns>
-          <Column>
-            <h2 class="text-3xl text-gray-700">Years of Experience</h2>
-            <p class="text-5xl font-semibold">
-              <span
-                class="animated animate-to"
-                data-animate-to="8"
-                data-animate-ms="1000"
-                id="oss-contributions">0</span
-              >+
-            </p>
-          </Column>
-
-          <Column>
-            <h2 class="text-3xl text-gray-700">Open Source Contributions</h2>
-            <p class="text-5xl font-semibold">
-              <span class="animated animate-to" data-animate-to="12772">0</span
-              >+
-            </p>
-          </Column>
-
-          <Column>
-            <h2 class="text-3xl text-gray-700">Open Source Projects</h2>
-            <p class="text-5xl font-semibold">
-              <span class="animated animate-to" data-animate-to="97">0</span>+
-            </p>
-          </Column>
-        </Columns>
-      </section>
-
-      <section
-        id="services"
-        class="container mx-auto w-4/5 max-w-7xl space-y-20 text-center font-title"
-      >
-        <div class="text-4xl font-semibold text-gray-700 lg:text-5xl">
-          <h1>My Services</h1>
-        </div>
-        <div
-          class="flex flex-col justify-center space-y-5 text-gray-700 lg:flex-row lg:space-x-5 lg:space-y-0"
-        >
-          {
-            services.map((service) => (
-              <a
-                href={service.href}
-                class="animated slide-up staggered flex w-full cursor-pointer flex-col  justify-center space-y-4 rounded-lg bg-amber-400 p-10 transition-all "
-              >
-                {service.imageURL ? (
-                  <img
-                    class="mx-auto w-52"
-                    src={service.imageURL}
-                    alt={service.mediaAlt}
-                  />
-                ) : (
-                  <video
-                    class="mx-auto w-72"
-                    src={service.videoURL}
-                    autoplay
-                    muted
-                    playsinline
-                    loop
-                  />
-                )}
-                <h2 class="text-3xl font-semibold">{service.name}</h2>
-              </a>
-            ))
-          }
-        </div>
-      </section>
-    </div>
-
-    <script defer src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"
-    ></script>
-    <script>
-      import TypeIt from "typeit";
-
-      const TYPE_SPEED = 40;
-      const PAUSE_AFTER_TYPE = 2000;
-      const PAUSE_BEFORE_DELETE = 200;
-
-      const locations = [
-        "the NY Capital Region",
-        "Albany",
-        "Troy",
-        "Schenectady",
-        "Saratoga",
-      ];
-
-      document.addEventListener("DOMContentLoaded", function () {
-        let typer = new TypeIt("#location", {
-          loop: true,
-          speed: TYPE_SPEED,
-        });
-
-        for (const location of locations) {
-          typer = typer
-            .type(location)
-            .pause(PAUSE_AFTER_TYPE)
-            .delete()
-            .pause(PAUSE_BEFORE_DELETE);
+        {
+          services.map((service) => (
+            <a
+              href={service.href}
+              class="animated slide-up staggered flex w-full cursor-pointer flex-col  justify-center space-y-4 rounded-lg bg-amber-400 p-10 transition-all "
+            >
+              {service.imageURL ? (
+                <img
+                  class="mx-auto w-52"
+                  src={service.imageURL}
+                  alt={service.mediaAlt}
+                />
+              ) : (
+                <video
+                  class="mx-auto w-72"
+                  src={service.videoURL}
+                  autoplay
+                  muted
+                  playsinline
+                  loop
+                />
+              )}
+              <h2 class="text-3xl font-semibold">{service.name}</h2>
+            </a>
+          ))
         }
+      </div>
+    </section>
+  </div>
 
-        typer.go();
+  <script defer src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
+  <script>
+    import TypeIt from "typeit";
+
+    const TYPE_SPEED = 40;
+    const PAUSE_AFTER_TYPE = 2000;
+    const PAUSE_BEFORE_DELETE = 200;
+
+    const locations = [
+      "the NY Capital Region",
+      "Albany",
+      "Troy",
+      "Schenectady",
+      "Saratoga",
+    ];
+
+    document.addEventListener("DOMContentLoaded", function () {
+      let typer = new TypeIt("#location", {
+        loop: true,
+        speed: TYPE_SPEED,
       });
-    </script>
 
-    <script defer>
-      function animateValue(obj, start, end, duration) {
-        let startTimestamp = null;
-        const step = (timestamp) => {
-          if (!startTimestamp) startTimestamp = timestamp;
-          const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-          obj.innerHTML = Math.floor(
-            progress * (end - start) + start
-          ).toLocaleString();
-          if (progress < 1) {
-            window.requestAnimationFrame(step);
-          }
-        };
-        window.requestAnimationFrame(step);
+      for (const location of locations) {
+        typer = typer
+          .type(location)
+          .pause(PAUSE_AFTER_TYPE)
+          .delete()
+          .pause(PAUSE_BEFORE_DELETE);
       }
 
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("active");
+      typer.go();
+    });
+  </script>
 
-            if (entry.target.classList.contains("animate-to")) {
-              let { animateFrom, animateTo, animateMs } = entry.target.dataset;
-              animateFrom = +(animateFrom ?? 0);
-              animateTo = +(animateTo ?? 0);
-              animateMS = +(animateMs ?? 5000);
+  <script defer>
+    function animateValue(obj, start, end, duration) {
+      let startTimestamp = null;
+      const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        obj.innerHTML = Math.floor(
+          progress * (end - start) + start
+        ).toLocaleString();
+        if (progress < 1) {
+          window.requestAnimationFrame(step);
+        }
+      };
+      window.requestAnimationFrame(step);
+    }
 
-              animateValue(entry.target, animateFrom, animateTo, animateMS);
-            }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+
+          if (entry.target.classList.contains("animate-to")) {
+            let { animateFrom, animateTo, animateMs } = entry.target.dataset;
+            animateFrom = +(animateFrom ?? 0);
+            animateTo = +(animateTo ?? 0);
+            animateMS = +(animateMs ?? 5000);
+
+            animateValue(entry.target, animateFrom, animateTo, animateMS);
           }
-        });
+        }
       });
+    });
 
-      const animatedElements = document.querySelectorAll(".animated");
-      animatedElements.forEach((el) => observer.observe(el));
+    const animatedElements = document.querySelectorAll(".animated");
+    animatedElements.forEach((el) => observer.observe(el));
 
-      // document.querySelectorAll(".animate-to").forEach((element) => {
-      //   const animateFrom = +(element.dataset.animateFrom ?? 0);
-      //   const animateTo = +(element.dataset.animateTo ?? 0);
-      //   const animateMS = +(element.dataset.animateMs ?? 5000);
+    // document.querySelectorAll(".animate-to").forEach((element) => {
+    //   const animateFrom = +(element.dataset.animateFrom ?? 0);
+    //   const animateTo = +(element.dataset.animateTo ?? 0);
+    //   const animateMS = +(element.dataset.animateMs ?? 5000);
 
-      //   animateValue(element, animateFrom, animateTo, animateMS);
-      // });
-    </script>
-  </main>
+    //   animateValue(element, animateFrom, animateTo, animateMS);
+    // });
+  </script>
 </BaseLayout>
 
 <style>
   @media screen and (min-width: 1000px) {
     .animated {
       transition-duration: 1s;
-      transition-delay: 200ms;
       transition-property: opacity, filter, transform;
     }
 
@@ -295,11 +279,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     }
 
     .animated.staggered:nth-child(2) {
-      transition-delay: 0.4s;
+      transition-delay: 0.2s;
     }
 
     .animated.staggered:nth-child(3) {
-      transition-delay: 0.6s;
+      transition-delay: 0.4s;
     }
 
     .animated.slide-in.active {

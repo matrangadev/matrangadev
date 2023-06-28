@@ -22,33 +22,18 @@ export const educationPrivatePrices: Price[] = [
   },
 ];
 
-export const educationGroupPrices: Price[] = [
-  {
-    name: "Below Middle School",
-    dollarsPerHour: 25,
-  },
-  {
-    name: "Middle School",
-    dollarsPerHour: 30,
-  },
-  {
-    name: "High School and above",
-    dollarsPerHour: 35,
-  },
-];
-
 export const topicRows: Topic[][] = [
   [
     {
       name: "Intro to Programming",
     },
     {
-      name: "Intermediate Programming",
+      name: "Data Structures & Algorithms",
     },
   ],
   [
     {
-      name: "Advanced Programming",
+      name: "Cybersecurity",
     },
     {
       name: "Web Design & Development",

@@ -1,8 +1,15 @@
 ---
+export interface Props {
+  noPadding: boolean;
+}
+
+const { noPadding = false } = Astro.props;
 ---
 
 <section
-  class="container mx-auto w-4/5 max-w-7xl py-20 text-lg text-gray-800 lg:px-11"
+  class={`container mx-auto w-4/5 max-w-7xl ${
+    noPadding ? "" : "py-16"
+  } text-lg text-gray-800 lg:px-11`}
 >
   <slot />
 </section>

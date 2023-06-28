@@ -2,14 +2,9 @@ type Service = {
   name: string;
   mediaAlt: string;
   href: string;
-} & (
-  | {
-      imageURL: string;
-    }
-  | {
-      videoURL: string;
-    }
-);
+  imageURL?: string;
+  videoURL?: string;
+};
 
 export const services: Service[] = [
   {

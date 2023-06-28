@@ -31,4 +31,13 @@ const defaultDescription = tagLine;
   rel="stylesheet"
 />
 
-<script async defer src="https://analytics.umami.is/script.js" data-website-id="80433981-d475-4563-a171-087f84e1c4dd"></script>
+{
+  import.meta.env.PROD && (
+    <script
+      async
+      defer
+      src="https://analytics.umami.is/script.js"
+      data-website-id="80433981-d475-4563-a171-087f84e1c4dd"
+    />
+  )
+}
