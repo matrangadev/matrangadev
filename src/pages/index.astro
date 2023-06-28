@@ -40,7 +40,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         class="animated slide-in from-right mt-10 space-y-6 lg:mt-20 lg:w-1/2 lg:px-11 lg:py-12"
       >
         <h2 class="leading-12 font-title text-5xl font-semibold text-gray-800">
-          I want to save you <span class="text-amber-500 underline">
+          I want to save you <span
+            id="money"
+            class="cursor-pointer text-amber-500 underline"
+          >
             money</span
           >
         </h2>
@@ -65,7 +68,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </div>
       <div class="animated slide-in space-y-6 lg:w-1/2 lg:px-11">
         <h2 class="leading-12 font-title text-5xl font-semibold text-gray-800">
-          I want to save you <span class="text-amber-500 underline"> time</span>
+          I want to save you <span
+            id="time"
+            class="cursor-pointer text-amber-500 underline"
+          >
+            time</span
+          >
         </h2>
         <p class="font-title text-xl font-medium text-gray-600">
           Do you jump between a dozen different platforms to manage your
@@ -171,6 +179,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </section>
   </div>
 
+  <script
+    slot="head"
+    defer
+    src="https://cdn.jsdelivr.net/npm/tsparticles-confetti@2.10.1/tsparticles.confetti.bundle.min.js"
+  ></script>
   <script defer src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
   <script>
     import TypeIt from "typeit";
@@ -241,13 +254,72 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     const animatedElements = document.querySelectorAll(".animated");
     animatedElements.forEach((el) => observer.observe(el));
 
-    // document.querySelectorAll(".animate-to").forEach((element) => {
-    //   const animateFrom = +(element.dataset.animateFrom ?? 0);
-    //   const animateTo = +(element.dataset.animateTo ?? 0);
-    //   const animateMS = +(element.dataset.animateMs ?? 5000);
+    const defaults = {
+      spread: 60,
+      ticks: 100,
+      gravity: 0,
+      decay: 0.94,
+      startVelocity: 20,
+    };
 
-    //   animateValue(element, animateFrom, animateTo, animateMS);
-    // });
+    // Confetti setup
+    document
+      .getElementById("money")
+      .addEventListener("click", function ({ target, clientX: x, clientY: y }) {
+        let width =
+          window.innerWidth ||
+          document.documentElement.clientWidth ||
+          document.body.clientWidth;
+        let height =
+          window.innerHeight ||
+          document.documentElement.clientHeight ||
+          document.body.clientHeight;
+
+        confetti({
+          ...defaults,
+          particleCount: 25,
+          scalar: 2,
+          shapes: ["text"],
+          shapeOptions: {
+            text: {
+              value: ["💲"],
+            },
+          },
+          position: {
+            x: (x / width) * 100,
+            y: (y / height) * 100,
+          },
+        });
+      });
+
+    document
+      .getElementById("time")
+      .addEventListener("click", function ({ target, clientX: x, clientY: y }) {
+        let width =
+          window.innerWidth ||
+          document.documentElement.clientWidth ||
+          document.body.clientWidth;
+        let height =
+          window.innerHeight ||
+          document.documentElement.clientHeight ||
+          document.body.clientHeight;
+
+        confetti({
+          ...defaults,
+          particleCount: 25,
+          scalar: 2,
+          shapes: ["text"],
+          shapeOptions: {
+            text: {
+              value: ["⌛"],
+            },
+          },
+          position: {
+            x: (x / width) * 100,
+            y: (y / height) * 100,
+          },
+        });
+      });
   </script>
 </BaseLayout>
 
