@@ -27,19 +27,23 @@ const isActive = (href: string) => Astro.url.pathname == href;
 ---
 
 <nav
-  class="fixed inset-x-0 top-0 z-10 mx-auto flex w-full flex-col items-center justify-between bg-white bg-opacity-60 py-3 px-24 font-title text-lg text-gray-700 backdrop-blur-[10px] lg:top-7 lg:w-5/6 lg:max-w-7xl lg:flex-row lg:flex-wrap lg:rounded-full lg:py-4"
+  class="fixed inset-x-0 top-0 z-10 mx-auto flex w-full flex-col items-center justify-between bg-white bg-opacity-60 px-24 py-3 font-title text-lg text-gray-700 backdrop-blur-[10px] lg:top-7 lg:w-5/6 lg:max-w-7xl lg:flex-row lg:flex-wrap lg:rounded-full lg:py-4"
   role="navigation"
   aria-label="main navigation"
 >
   <h1 class="text-xl font-bold" id="logo">[MD]</h1>
   <div
     id="menu"
-    class="mt-4 flex hidden w-auto flex-col items-center space-y-4 text-center font-semibold text-gray-700 lg:mt-0 lg:flex lg:flex-row lg:space-x-8 lg:space-y-0"
+    class="mt-4 flex w-auto flex-col items-center space-y-4 text-center font-semibold text-gray-700 lg:mt-0 lg:flex lg:flex-row lg:space-x-8 lg:space-y-0"
   >
     {
       navbarItems.map((item) => (
         <a
-          class:list={[isActive(item.href) && "text-amber-500"]}
+          class:list={[
+            "transition-colors",
+            isActive(item.href) && "text-amber-500",
+            "hover:text-amber-500",
+          ]}
           rel="prefetch"
           href={item.href}
         >

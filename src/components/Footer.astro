@@ -12,10 +12,16 @@ const currentYear = new Date().getFullYear();
         <p class="company-name">{name}</p>
 
         <p class="company-phoneNumber">
-          <a href={`tel:${phoneNumber}`}>{phoneNumber}</a>
+          <a
+            class="transition-colors hover:text-amber-500"
+            href={`tel:${phoneNumber}`}>{phoneNumber}</a
+          >
         </p>
         <p class="company-email">
-          <a href={`mailto:${email}`}>{email}</a>
+          <a
+            class="transition-colors hover:text-amber-500"
+            href={`mailto:${email}`}>{email}</a
+          >
         </p>
       </div>
       <div class="flex-1 lg:px-11">
@@ -23,16 +29,32 @@ const currentYear = new Date().getFullYear();
         <nav>
           <ul>
             <li>
-              <a href="/" rel="prefetch">Home</a>
+              <a
+                href="/"
+                rel="prefetch"
+                class="transition-colors hover:text-amber-500">Home</a
+              >
             </li>
             <li>
-              <a href="/about" rel="prefetch">About Me</a>
+              <a
+                href="/about"
+                rel="prefetch"
+                class="transition-colors hover:text-amber-500">About Me</a
+              >
             </li>
             <li>
-              <a href="/contact" rel="prefetch">Contact Us</a>
+              <a
+                href="/contact"
+                rel="prefetch"
+                class="transition-colors hover:text-amber-500">Contact Us</a
+              >
             </li>
             <li>
-              <a href="/#services" rel="prefetch">Services</a>
+              <a
+                href="/#services"
+                rel="prefetch"
+                class="transition-colors hover:text-amber-500">Services</a
+              >
             </li>
           </ul>
         </nav>
@@ -42,7 +64,7 @@ const currentYear = new Date().getFullYear();
         <p>{mission}</p>
       </div>
     </div>
-    <p class="text-center text-gray-400">
+    <p class="text-center">
       &copy; {currentYear}
       {legalName}
     </p>
