@@ -1,4 +1,6 @@
 ---
+import Column from "../components/Column.astro";
+import Columns from "../components/Columns.astro";
 import { name, phoneNumber, tagLinePrefix, mission } from "../data/company";
 import { services } from "../data/services";
 import BaseLayout from "../layouts/BaseLayout.astro";
@@ -54,9 +56,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             >
           </h2>
           <p class="font-title text-xl font-medium text-gray-600">
-            By making the right technology choices for your organization.
-            Whether that means helping you select the best existing tools and
-            services, or hand-crafting them myself for your exact needs.
+            My software has raised six figures for businesses with <strong
+              >$0</strong
+            > in platform maintenance fees. I choose the most efficient and inexpensive
+            tools to get the job done.
           </p>
         </div>
       </section>
@@ -80,9 +83,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             >
           </h2>
           <p class="font-title text-xl font-medium text-gray-600">
-            By automating the processes that you do monthly, weekly, and daily
-            to keep your organization running. Plus, I'll manage and maintain
-            the technology so you have one less thing to worry about.
+            Do you jump between a dozen different platforms to manage your
+            organization's emails, customers, services, products, data, etc.? My
+            specialty is in developing a <strong>single</strong> platform for your
+            <strong>exact</strong> needs.
           </p>
         </div>
       </section>
@@ -104,6 +108,40 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             >give back</span
           > to the Capital Region community.
         </p>
+      </section>
+
+      <section
+        id="counters"
+        class="container mx-auto w-4/5 max-w-7xl flex-row space-y-20 text-center font-title"
+      >
+        <Columns>
+          <Column>
+            <h2 class="text-3xl text-gray-700">Years of Experience</h2>
+            <p class="text-5xl font-semibold">
+              <span
+                class="animated animate-to"
+                data-animate-to="8"
+                data-animate-ms="1000"
+                id="oss-contributions">0</span
+              >+
+            </p>
+          </Column>
+
+          <Column>
+            <h2 class="text-3xl text-gray-700">Open Source Contributions</h2>
+            <p class="text-5xl font-semibold">
+              <span class="animated animate-to" data-animate-to="12772">0</span
+              >+
+            </p>
+          </Column>
+
+          <Column>
+            <h2 class="text-3xl text-gray-700">Open Source Projects</h2>
+            <p class="text-5xl font-semibold">
+              <span class="animated animate-to" data-animate-to="97">0</span>+
+            </p>
+          </Column>
+        </Columns>
       </section>
 
       <section
@@ -182,16 +220,48 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </script>
 
     <script defer>
+      function animateValue(obj, start, end, duration) {
+        let startTimestamp = null;
+        const step = (timestamp) => {
+          if (!startTimestamp) startTimestamp = timestamp;
+          const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+          obj.innerHTML = Math.floor(
+            progress * (end - start) + start
+          ).toLocaleString();
+          if (progress < 1) {
+            window.requestAnimationFrame(step);
+          }
+        };
+        window.requestAnimationFrame(step);
+      }
+
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("active");
+
+            if (entry.target.classList.contains("animate-to")) {
+              let { animateFrom, animateTo, animateMs } = entry.target.dataset;
+              animateFrom = +(animateFrom ?? 0);
+              animateTo = +(animateTo ?? 0);
+              animateMS = +(animateMs ?? 5000);
+
+              animateValue(entry.target, animateFrom, animateTo, animateMS);
+            }
           }
         });
       });
 
       const animatedElements = document.querySelectorAll(".animated");
       animatedElements.forEach((el) => observer.observe(el));
+
+      // document.querySelectorAll(".animate-to").forEach((element) => {
+      //   const animateFrom = +(element.dataset.animateFrom ?? 0);
+      //   const animateTo = +(element.dataset.animateTo ?? 0);
+      //   const animateMS = +(element.dataset.animateMs ?? 5000);
+
+      //   animateValue(element, animateFrom, animateTo, animateMS);
+      // });
     </script>
   </main>
 </BaseLayout>
