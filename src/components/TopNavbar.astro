@@ -40,7 +40,7 @@ const isActive = (href: string) => Astro.url.pathname == href;
       navbarItems.map((item) => (
         <a
           class:list={[
-            "transition-colors",
+            "transition-colors duration-75",
             isActive(item.href) && "text-amber-500",
             "hover:text-amber-500",
           ]}
