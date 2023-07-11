@@ -1,0 +1,37 @@
+---
+import PageHero from "../components/PageHero.astro";
+import Section from "../components/Section.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+import { examples } from "../data/portfolio";
+import ButtonLink from "../components/ButtonLink.astro";
+---
+
+<BaseLayout title="Contact Me">
+  <PageHero
+    title="My Portfolio"
+    subtitle="Check out some examples of my work"
+  />
+  <Section>
+    {
+      examples.map((example) => (
+        <div class="mb-10 flex flex-col items-center rounded-xl bg-amber-100 p-12 xl:flex-row">
+          <div class="mb-12 max-w-md overflow-hidden rounded-lg xl:mb-0 xl:mr-12">
+            <video
+              src="https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/1080/Big_Buck_Bunny_1080_10s_1MB.mp4"
+              controls
+            />
+          </div>
+          <div>
+            <h2 class="font-title text-5xl font-semibold">{example.title}</h2>
+            <h2 class="font-title text-2xl font-medium text-amber-500">
+              {example.subtitle}
+            </h2>
+            <h2 class="text-gray-800">{example.description}</h2>
+          </div>
+        </div>
+      ))
+    }
+    <ButtonLink href="/contact">Let's Get Started!</ButtonLink>
+  </Section>
+</BaseLayout>

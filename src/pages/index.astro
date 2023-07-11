@@ -1,4 +1,5 @@
 ---
+import ButtonLink from "../components/ButtonLink.astro";
 import Column from "../components/Column.astro";
 import Columns from "../components/Columns.astro";
 import { name, tagLinePrefix } from "../data/company";
@@ -152,17 +153,17 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           services.map((service) => (
             <a
               href={service.href}
-              class="animated slide-up staggered flex w-full cursor-pointer flex-col  justify-center space-y-4 rounded-lg bg-amber-400 p-10 transition-all "
+              class="flex w-full cursor-pointer flex-col justify-center space-y-4 overflow-hidden rounded-lg bg-amber-400 p-10 transition-all "
             >
               {service.imageURL ? (
                 <img
-                  class="mx-auto w-52"
+                  class="staggered mx-auto w-52 "
                   src={service.imageURL}
                   alt={service.mediaAlt}
                 />
               ) : (
                 <video
-                  class="mx-auto w-72"
+                  class="staggered mx-auto w-72 "
                   src={service.videoURL}
                   autoplay
                   muted
@@ -175,6 +176,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           ))
         }
       </div>
+
+      <ButtonLink href="/contact">
+        I'm Interested! Let's Get Started!
+      </ButtonLink>
     </section>
   </div>
 
@@ -340,6 +345,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       transform: translateY(100%);
     }
 
+    .animated.slide-down {
+      opacity: 0;
+      filter: blur(2px);
+      transform: translateY(-100%);
+    }
+
     .animated.slide-in.from-right {
       transform: translateX(100%);
     }
@@ -361,7 +372,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       filter: blur(0);
       transform: translateX(0);
     }
-    .animated.slide-up.active {
+    .animated.slide-up.active,
+    .animated.slide-down.active {
       opacity: 1;
       filter: blur(0);
       transform: translateY(0);
