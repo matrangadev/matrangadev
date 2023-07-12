@@ -2,6 +2,7 @@
 interface NavbarItem {
   label: string;
   href: string;
+  rootUrl?: string;
 }
 
 const navbarItems: NavbarItem[] = [
@@ -16,6 +17,7 @@ const navbarItems: NavbarItem[] = [
   {
     label: "Services",
     href: "/#services",
+    rootUrl: "/services",
   },
   // {
   //   label: "Portfolio",
@@ -27,7 +29,21 @@ const navbarItems: NavbarItem[] = [
   },
 ];
 
-const isActive = (href: string) => Astro.url.pathname == href;
+const isActive = ({ href, rootUrl }: NavbarItem) => {
+  if (Astro.url.pathname === href) {
+    return true;
+  }
+
+  if (
+    href !== "/" &&
+    (Astro.url.pathname.includes(href) ||
+      (rootUrl && Astro.url.pathname.includes(rootUrl)))
+  ) {
+    return true;
+  }
+
+  return false;
+};
 ---
 
 <nav
@@ -45,7 +61,7 @@ const isActive = (href: string) => Astro.url.pathname == href;
         <a
           class:list={[
             "transition-colors duration-75",
-            isActive(item.href) && "text-amber-500",
+            isActive(item) && "text-amber-500",
             "hover:text-amber-500",
           ]}
           rel="prefetch"

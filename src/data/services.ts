@@ -17,7 +17,7 @@ export const services: Service[] = [
     name: "Software Development",
     imageURL: "/assets/phone_with_hand.svg",
     mediaAlt: "Smart phone held in a hand",
-    href: "/coming-soon",
+    href: "/services/development",
   },
   {
     name: "Computer Science Education",

@@ -1,4 +1,5 @@
 ---
+import ButtonLink from "../../components/ButtonLink.astro";
 import Column from "../../components/Column.astro";
 import Columns from "../../components/Columns.astro";
 import EducationTopic from "../../components/EducationTopic.astro";
@@ -9,74 +10,62 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="Computer Science Education">
-  <main>
-    <PageHero
-      title="Computer Science Education"
-      subtitle="My roots are in teaching Computer Science to students aged 5-18 for 7 years in both 1-on-1 and group settings. I'll work with your student no matter their experience level."
-    />
+  <PageHero
+    title="Computer Science Education"
+    subtitle="My roots are in teaching Computer Science to students aged 5-18 for 7 years in both 1-on-1 and group settings. I'll work with your student no matter their experience level."
+  />
 
-    <Section noPadding>
-      <h1
-        class="mt-20 text-center font-title text-4xl font-semibold lg:text-5xl"
-      >
-        Private Lessons
-      </h1>
+  <Section noPadding>
+    <h1 class="mt-20 text-center font-title text-4xl font-semibold lg:text-5xl">
+      Private Lessons
+    </h1>
 
-      <Columns className="items-center">
-        <Column>
-          <img
-            src="/assets/services/education/125-Online-Education.svg"
-            alt="Online tutor and student"
-          />
-        </Column>
-        <Column>
-          <div class="text-center font-title">
-            {
-              educationPrivatePrices.map((price) => (
-                <div class="mb-10">
-                  <h2 class="mb-2 text-2xl font-semibold text-gray-700">
-                    {price.name}
-                  </h2>
-                  <p class="font-bold">
-                    <span class="text-5xl text-amber-500">
-                      ${price.dollarsPerHour}
-                    </span>
-                    <span class="text-3xl">/hr</span>
-                  </p>
-                </div>
-              ))
-            }
-          </div>
-        </Column>
-      </Columns>
-    </Section>
+    <Columns className="items-center">
+      <Column>
+        <img
+          src="/assets/services/education/125-Online-Education.svg"
+          alt="Online tutor and student"
+        />
+      </Column>
+      <Column>
+        <div class="text-center font-title">
+          {
+            educationPrivatePrices.map((price) => (
+              <div class="mb-10">
+                <h2 class="mb-2 text-2xl font-semibold text-gray-700">
+                  {price.name}
+                </h2>
+                <p class="font-bold">
+                  <span class="text-5xl text-amber-500">
+                    ${price.dollarsPerHour}
+                  </span>
+                  <span class="text-3xl">/hr</span>
+                </p>
+              </div>
+            ))
+          }
+        </div>
+      </Column>
+    </Columns>
+  </Section>
 
-    <Section>
-      <h1
-        class="mb-10 text-center font-title text-4xl font-semibold lg:text-5xl"
-      >
-        Offered Topics
-      </h1>
+  <Section>
+    <h1 class="mb-10 text-center font-title text-4xl font-semibold lg:text-5xl">
+      Offered Topics
+    </h1>
 
-      {
-        topicRows.map((row) => (
-          <Columns className="mb-10">
-            {row.map((topic) => (
-              <Column>
-                <EducationTopic topic={topic} />
-              </Column>
-            ))}
-          </Columns>
-        ))
-      }
+    {
+      topicRows.map((row) => (
+        <Columns className="mb-10">
+          {row.map((topic) => (
+            <Column>
+              <EducationTopic topic={topic} />
+            </Column>
+          ))}
+        </Columns>
+      ))
+    }
 
-      <div>
-        <a
-          href="/contact"
-          class="block w-full rounded-lg bg-amber-300 py-5 text-center font-title text-2xl font-bold text-gray-700"
-          >Get Started</a
-        >
-      </div>
-    </Section>
-  </main>
+    <ButtonLink href="/contact" size="lg">Get Started</ButtonLink>
+  </Section>
 </BaseLayout>

@@ -1,13 +1,26 @@
 ---
 export interface Props {
   href: string;
+  target?: string;
+  size?: "sm" | "md" | "lg";
+  className?: string;
 }
 
-const { href } = Astro.props;
+const { href, target, size, className } = Astro.props;
+
+let sizeClasses = {
+  sm: "px-4 py-2",
+  md: "text-xl px-5 py-3",
+  lg: "text-2xl px-5 py-5",
+};
 ---
 
 <a
   href={href ?? "#"}
-  class="block w-full rounded-lg bg-amber-300 py-5 text-center font-title text-2xl font-bold text-gray-700 transition-colors duration-150 hover:bg-amber-400"
-  ><slot /></a
+  target={target}
+  class:list={[
+    "block rounded-lg bg-amber-300 text-center font-title font-bold text-gray-700 transition-colors duration-150 hover:bg-amber-400",
+    sizeClasses[size ?? "md"],
+    className,
+  ]}><slot /></a
 >
