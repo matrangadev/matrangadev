@@ -15,16 +15,19 @@ import ButtonLink from "../components/ButtonLink.astro";
   <Section>
     {
       examples.map((example) => (
-        <div class="mb-10 flex flex-col items-center rounded-xl bg-amber-100 p-12 xl:flex-row">
-          <div class="mb-12 max-w-md overflow-hidden rounded-lg xl:mb-0 xl:mr-12">
+        <div class="mb-10 flex flex-col items-center rounded-xl bg-amber-100 p-6 lg:flex-row lg:p-12">
+          <div class="w-md mb-12 overflow-hidden rounded-lg lg:mb-0 lg:mr-12">
             <video
+              class="w-full"
               src="https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/1080/Big_Buck_Bunny_1080_10s_1MB.mp4"
               controls
             />
           </div>
           <div>
-            <h2 class="font-title text-5xl font-semibold">{example.title}</h2>
-            <h2 class="font-title text-2xl font-medium text-amber-500">
+            <h2 class="font-title text-4xl font-semibold xl:text-5xl">
+              {example.title}
+            </h2>
+            <h2 class="font-title text-xl font-medium text-amber-500 xl:text-2xl">
               {example.subtitle}
             </h2>
             <h2 class="text-gray-800">{example.description}</h2>
